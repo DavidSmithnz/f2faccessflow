@@ -1,0 +1,64 @@
+<template>
+    <div class="container">
+        <div class="coachHeading">Friday Check Out</div>
+
+        <template if:false={showThankYouMessage}>
+            <ul class="chat-thread" data-id="chatThread">
+                <template for:each={coachConversations} for:item="coachConversation">
+                    <li key={coachConversation.Question__c}>
+                        <div class="chat-message coach">
+                            <!-- <div class="sender">Coach</div> -->
+                            <div class="bubble">{coachConversation.Question__c}</div>
+                        </div>
+                        <div class="chat-message user">
+                            <!-- <div class="sender">You</div> -->
+                            <div class="bubble">{coachConversation.Answer__c}</div>
+                        </div>
+                    </li>
+                </template>
+
+                <li>
+                    <div class="chat-message coach">
+                        <!-- <div class="sender">Coach</div> -->
+                        <div class="bubble">{coachQuestion}</div>
+                    </div>
+
+                </li>
+            </ul>
+            <div if:true={showLoader} class="typing-loader">
+                <span></span><span></span><span></span>
+            </div>
+            <template if:true={showAnswerTextbox}>
+                <template if:true={isQuestionTypeScale}>
+                    <div class="editProgressBody">
+                        <span class="editProgressCol1">
+                            <input type="range" style="margin-bottom: 0px;width: 90%; padding: 3px;" id="inputslider1" min="0" max="10"
+                                value={scaleLevel} onchange={handleScaleLevelChange} />
+                                <div class="sliderLabelContainer">
+                                    <span style="text-align: left;width: 50%;">Low</span><span
+                                      style="text-align: right;width: 50%;">High</span>
+                                  </div>
+                        </span>
+                        <span class="range-slider__value">{scaleLevel}</span>
+                    </div>
+                </template>
+                <template if:false={isQuestionTypeScale}>
+                    <div><textarea class="coachAnswerTextBox" maxlength="255" onchange={handleCoachAnswerChange} data-id="coachInputTextBox"
+                           >{coachAnswer}</textarea></div>
+                </template>
+                <div class="coachAnswerSubmitButton"><button onclick={handleCoachAnswerSubmit}>Submit</button></div>
+            </template>
+        </template>
+        <template if:true={showFollowUpMessage}>
+            <div class="coachQuestion">{followUpQuestion}</div>
+            <div class="coachFollowUpButton">
+                <button style="margin-right:10px;" onclick={handleFollowUpButtonYes}>YES</button>
+                <button onclick={handleFollowUpButtonNo}>No</button>
+            </div>
+        </template>
+        <template if:true={showThankYouMessage}>
+            <div>Thank you for Checking-Out.</div>
+        </template>
+    </div>
+
+</template>

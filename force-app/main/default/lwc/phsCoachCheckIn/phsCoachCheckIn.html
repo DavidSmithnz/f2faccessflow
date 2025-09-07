@@ -1,0 +1,59 @@
+<template>
+    <div class="container">
+        <div class="coachHeading">Coach Chat</div>        
+
+        <div class="chat-scroll-container" data-id="scrollContainer">
+            <ul class="chat-thread" data-id="chatThread">
+                <template for:each={coachConversations} for:item="coachConversation">
+                    <li key={coachConversation.Question__c}>
+                        <div class="chat-message coach">
+                            <!-- <img src="/resource/coachAvatar" alt="Coach" class="avatar" /> -->
+                            <div>
+                                <!-- <div class="sender">Coach <lightning-formatted-date-time value={coachConversation.Question_Date__c}></lightning-formatted-date-time></div> -->
+                                <div class="bubble fade-in">{coachConversation.Question__c}</div>
+                            </div>
+                        </div>
+                        <div class="chat-message user">
+                            <div>
+                                <!-- <div class="sender">You <lightning-formatted-date-time value={coachConversation.Answer_Date__c}></lightning-formatted-date-time></div> -->
+                                <div class="bubble user-bubble fade-in">{coachConversation.Answer__c}</div>
+                            </div>
+                            <!-- <img src="/resource/userAvatar" alt="User" class="avatar" /> -->
+                        </div>
+                    </li>
+                </template>
+
+                <li>
+                    <div if:true={coachQuestion} class="chat-message coach coachQuestion" >
+                        <!-- <img src="/resource/coachAvatar" alt="Coach" class="avatar" /> -->
+                        <div>
+                            <!-- <div class="sender">Coach</div> -->
+                            <div class="bubble fade-in">{coachQuestion}</div>
+                        </div>
+                    </div>
+                </li>
+            </ul>
+        </div>
+
+        <div if:true={showLoader} class="typing-loader">
+            <span></span><span></span><span></span>
+        </div>
+
+      <div class="chat-input-container">
+    <textarea class="chat-input" maxlength="255" onchange={handleCoachAnswerChange} data-id="coachInputTextBox">{coachAnswer}</textarea>
+    <button class="chat-send-button" onclick={handleCoachAnswerSubmit} title="Send">➤</button>
+</div>
+
+        <template if:true={showFollowUpMessage}>
+            <div class="coachQuestion">{followUpQuestion}</div>
+            <div class="coachFollowUpButton">
+                <button style="margin-right:10px;" onclick={handleFollowUpButtonYes}>YES</button>
+                <button onclick={handleFollowUpButtonNo}>No</button>
+            </div>
+        </template>
+
+        <template if:true={showThankYouMessage}>
+            <div>Thank you for Checking-In.</div>
+        </template>
+    </div>
+</template>

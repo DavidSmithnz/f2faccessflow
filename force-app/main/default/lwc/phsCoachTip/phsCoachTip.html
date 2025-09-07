@@ -1,0 +1,10 @@
+<template>
+    <div class="container">        
+        <div class="coachHeading">Recommended Tip</div>
+        <div if:true={showLoader} class="loader"></div>  
+        <template if:true={showTip}>
+            <div class="coachQuestion">{TipOfTheDay}</div>  
+            <!-- <img class='cardImage' src={tipIcon} />          -->
+        </template>
+    </div>
+</template>

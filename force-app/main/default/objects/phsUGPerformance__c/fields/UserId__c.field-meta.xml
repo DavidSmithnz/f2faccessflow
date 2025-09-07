@@ -1,0 +1,14 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>UserId__c</fullName>
+    <deleteConstraint>SetNull</deleteConstraint>
+    <description>Foreign key to Contact Object</description>
+    <externalId>false</externalId>
+    <label>UserId</label>
+    <referenceTo>Contact</referenceTo>
+    <relationshipLabel>phsUGPerformance</relationshipLabel>
+    <relationshipName>phsUGPerformance</relationshipName>
+    <required>false</required>
+    <trackTrending>false</trackTrending>
+    <type>Lookup</type>
+</CustomField>

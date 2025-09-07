@@ -1,0 +1,39 @@
+<template>
+    <div class="container">
+        <div class="head">
+          <h1>Add New Goal</h1>
+        </div>
+        <div class="div1">
+          <label for="">Focus Area</label> <br />
+          <input type="text" placeholder="Select your focus area" onchange={handlefocusAreaChange} />
+        </div>
+        <div class="div2">
+          <label for="">Goal Name</label> <br />
+          <input type="text" placeholder="Enter your goal" onchange={handlegoalNameChange}/>
+        </div>
+        <div class="div3">
+          <label for="">Goal Type : {goalType}</label>
+          <div class="btn">
+            <button onclick={handleGoalTypeIndividual}>Individual</button>
+            <button onclick={handleGoalTypeManager}>Manager</button>
+            <button onclick={handleGoalTypeOrganization}>Organization</button>
+          </div>
+        </div>
+        <div class="div4">
+          <label for="">Strategy</label><br />
+          <div class="plus">
+            <input type="text" onchange={handlegoalStrategyChange}/>
+            <input type="button" value="+" class="btn-plus" />
+          </div>
+        </div>
+        <div class="div5">
+          <button onclick={handleAddGoal}>Add</button>
+          <button onclick={handleCancelGoal}>Cancel</button>
+        </div>
+        <div class="img">
+          <img src="./images/image.png" alt="image" />
+        </div>
+      </div>
+      <div class="spacer"></div>
+  
+</template>

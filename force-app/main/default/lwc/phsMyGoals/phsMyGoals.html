@@ -1,0 +1,1029 @@
+<template>
+  <div class="container">
+
+    <div class="tab">
+      <span class="tab1 tabItems selected" onclick={handleclickMyProgress}>Progress</span>
+      <span class="tab2 tabItems " onclick={handleclickActive} style="border-right: 1px solid #0077c0; border-left:1px solid #0077c0">Goals</span>
+      <span class="tab3 tabItems " onclick={handleclickMyTeam}>Team</span>
+    </div>
+
+    <div if:true={isMyProgress}>
+      <div class="goalsMessage">
+        <!-- Welcome to Goals, where you can monitor and track the progress of your personal corporate goals. -->
+        Welcome to your progress journal, where you can track your goals and accomplishments!
+      </div>
+      <div class="progress-container">
+        <div class="progress-wrapper">
+          <div class={stressLevel_css}>
+            <span class="progress-text">{stressLevel__c}
+            </span>
+          </div>
+          <div class="progress-description">Calmness Level
+            <div>
+              <!-- <lightning-helptext content="With no means to
+          be overally
+          crtically and you
+          look across the
+          time period how
+          stressed were you
+          this week at the
+          Focus area level."></lightning-helptext> -->
+          <lightning-helptext content="How stressed were you this week? Did you have a calm week or was it a little intense?"></lightning-helptext>
+            </div>
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class={focusQuality_css}>
+            <span class="progress-text">{focusQuality__c}
+            </span>
+          </div>
+          <div class="progress-description">Focus Quality
+            <div>
+              <!-- <lightning-helptext content="How well do you
+          think you focused
+          on the focus area
+          this week. (is this
+          redundantly
+          captured at a
+          strategy level?)"></lightning-helptext> -->
+          <lightning-helptext content="How well do you think you stuck to your focus area this week?"></lightning-helptext>
+            </div>
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class={timeInFlowState_css}>
+            <span class="progress-text">{timeInFlowState__c}
+            </span>
+          </div>
+          <div class="progress-description">Time in Flow
+            <div><lightning-helptext content="Estimate the time
+          in Flow. As a
+          reminder Flow is
+          dedicated focus
+          time (Can read
+          more here link)"></lightning-helptext></div>
+          </div>
+        </div>
+      </div>
+      <div class="progress-btn1">
+        <button onclick={handleclickEditProgress}>Edit Progress</button>
+      </div>
+    
+      <div class="main-container">
+        <div class="successContainer">
+          <div class="outer-challenge-container">
+            <div class="successHeader">My Wins <lightning-helptext style="vertical-align: 2px;" content="Add any
+              accomplishments
+              or positive vibes
+              from goals or
+              activities this
+              week."></lightning-helptext></div>
+              <div class="challenge-button">
+              <span if:false={isAddJournalSuccessStory}><button onclick={handleAddJournalSuccessStory}>Add Journal Entry</button></span>
+              <span if:true={isAddJournalSuccessStory} class="span-btn">   
+                   
+                  <button onclick={handleCancelJournalSuccessStory} class="cancel-btn" >Cancel</button>  
+                  <button onclick={handleSaveJournalSuccessStory}>Save</button>  
+                      
+              </span>
+              </div>
+          </div>
+          
+          <div if:false={isAddJournalSuccessStory} class="successBody">{successStories__c}</div>
+          <div if:true={isAddJournalSuccessStory}>
+
+            <textarea class="editProgressTextArea" maxlength="255" placeholder="Write Success Stories"
+            onchange={handlesuccessstoryChange}>
+          {successStories__c}
+        </textarea>
+
+          </div>
+
+        </div>
+        <!-- <div class="challenge-button">
+          <button>Add My Wins</button>
+        </div> -->
+      </div>
+      <!-- <div class="challenge-button">
+        <span if:false={isAddJournalChallenge}> <button onclick={handleAddJournalChallenge}>Add Journal Entry</button></span>
+        <span if:true={isAddJournalChallenge}>
+          <button onclick={handleSaveJournalChallenge} >Save</button>
+          <button onclick={handleCancelJournalChallenge}>Cancel</button>
+        </span>
+        </div> -->
+      <!-- <div class="challengesContainer">
+        <div class="challengesHeader">Challenges Faced <lightning-helptext style="vertical-align: 1px;" content="Add any particular
+          notes to support
+          the sorts you left
+          at a strategy or
+          goal level."></lightning-helptext></div>
+        <div class="challengesBody">{challengesFaced__c}</div>
+      </div> -->
+      <div class="main-container">
+        <div class="challengesContainer">
+          <div class="outer-challenge-container">
+            <div class="challengesHeader">Challenges Faced <lightning-helptext style="vertical-align: 2px;" content=
+              "Take a note of what was hard this week."
+              ></lightning-helptext></div>
+              <div class="challenge-button">
+              <span if:false={isAddJournalChallenge}> <button onclick={handleAddJournalChallenge}>Add Journal Entry</button></span>
+              <span if:true={isAddJournalChallenge}>
+               
+                <button onclick={handleCancelJournalChallenge}>Cancel</button>
+                <button onclick={handleSaveJournalChallenge} >Save</button>
+              </span>
+              </div>
+          </div>
+          <!-- <div class="challengesHeader">Challenges Faced <lightning-helptext style="vertical-align: 1px;" content=
+            "Take a note of what was hard this week."
+            ></lightning-helptext></div> -->
+          <div if:false={isAddJournalChallenge} class="challengesBody">{challengesFaced__c}</div>
+
+          <div if:true={isAddJournalChallenge}>
+           <textarea class="editProgressTextArea" maxlength="255" placeholder="Write Challenges faced"
+            onchange={handlechallengesfacedChange}>
+          {challengesFaced__c}
+           </textarea>
+        </div>
+        </div>    
+      </div>
+     
+      <!-- <div class="challenge-button">
+        <span if:false={isAddJournalSuccessStory}><button onclick={handleAddJournalSuccessStory}>Add Journal Entry</button></span>
+        <span if:true={isAddJournalSuccessStory} >     
+            <button onclick={handleSaveJournalSuccessStory}>Save</button>
+            <button onclick={handleCancelJournalSuccessStory} class="cancel-btn" >Cancel</button>         
+        </span>
+        </div> -->
+      
+      <!-- <div class="progress-btn1">
+        <button onclick={handleclickEditProgress}>Edit Progress</button>
+      </div> -->
+    </div>
+
+    <div if:true={isEditProgress}>
+      <div class="editProgressContainer">
+        <div class="editProgressHeader">Calmness Level </div>
+        <div class="editProgressBody">
+          <span class="editProgressCol1">
+            <input type="range" style="margin-bottom: 0px;" id="inputslider1" min="0" max="10" value={stressLevel__c}
+              onchange={handlestreelevelChange} />
+            <div class="sliderLabelContainer">
+              <span class="slider-span-text" style="text-align: left;width: 50%;">Low Stress</span><span
+              class="slider-span-text"  style="text-align: right;width: 50%;">High Stress</span>
+            </div>
+          </span>
+          <span class="range-slider__value">{stressLevel__c}</span>
+        </div>
+      </div>
+
+      <div class="editProgressContainer">
+        <div class="editProgressHeader">Focus Quality </div>
+        <div class="editProgressBody">
+          <span class="editProgressCol1">
+            <input type="range" style="margin-bottom: 0px;" id="inputslider2" min="0" max="10" value={focusQuality__c}
+              onchange={handlefocusQualityChange} />
+              <div class="sliderLabelContainer">
+                <span class="slider-span-text" style="text-align: left;width: 50%;">Low</span><span
+                class="slider-span-text"  style="text-align: right;width: 50%;">High</span>
+              </div>
+          </span>
+          <span class="range-slider__value">{focusQuality__c}</span>
+        </div>
+      </div>
+
+      <div class="editProgressContainer">
+        <div class="editProgressHeader">Time in Flow State </div>
+        <div class="editProgressBody">
+          <span class="editProgressCol1">
+            <input type="range" style="margin-bottom: 0px;" id="inputslider3" min="0" max="10"
+              value={timeInFlowState__c} onchange={handlefflowstateChange} />
+              <div class="sliderLabelContainer">
+                <span class="slider-span-text" style="text-align: left;width: 50%;">Low</span><span
+                class="slider-span-text"  style="text-align: right;width: 50%;">High</span>
+              </div>
+          </span>
+          <span class="range-slider__value">{timeInFlowState__c}</span>
+        </div>
+      </div>
+    <!-- 
+      <div class="editProgressContainer">
+        <div class="editProgressHeader" style="border-bottom: 0px;margin-bottom: 2px;">Challenges faced </div>
+        <div class="editProgressBody">
+          <textarea class="editProgressTextArea" maxlength="255" placeholder="Write Challenges faced"
+            onchange={handlechallengesfacedChange}>
+          {challengesFaced__c}
+        </textarea>
+        </div>
+      </div>
+
+      <div class="editProgressContainer">
+        <div class="editProgressHeader" style="border-bottom: 0px;margin-bottom: 2px;">Success stories </div>
+        <div class="editProgressBody">
+          <textarea class="editProgressTextArea" maxlength="255" placeholder="Write Success Stories"
+            onchange={handlesuccessstoryChange}>
+          {successStories__c}
+        </textarea>
+        </div>
+      </div> 
+      -->
+
+      <div class="slider-btn">
+        <button onclick={handleclickEditCancel}>Cancel</button>
+        <button onclick={handleclickEditSave}>Save</button>
+      </div>
+
+    </div>
+
+    <div class="tb-container" if:true={isGoals}>
+
+      <div class="btn-goal1">
+
+        <div class="">
+          <select class="goaloptions" onchange={handlesgoaloption}>
+        <option value="InProgress">In Progress Goals</option>
+            
+            <option value="Established">Established Goals</option>
+             <option value="Deactivated">Deactivated Goals</option>
+             <option value="SharedGoals">Shared Goals</option>
+            <option value="AllGoals">All Goals</option>
+
+          </select>
+        </div>
+        <button onclick={handlesaddgoals}>New Goal</button>
+      </div>
+      <div class="table_center">
+        <table id="goalsTable" class="table-container">
+
+          <thead>
+            <tr class="table-th">
+              <!-- <th class="table-td" onclick={handleFocusAreaSorting}>Focus Area <i class={arrowFocusArea}></i></th> -->
+              <th class="table-td" onclick={handleFocusAreaSorting}>
+                <span class="flex-label">
+                  <span>Focus Area </span>
+                  <i class={arrowFocusArea}></i>
+                </span>
+                
+              </th>
+              <th class="table-td" onclick={handleGoalSorting}>
+                <span class="flex-label">
+                  <span>Goals</span>
+                  <i class={arrowGoal}></i>
+                </span>
+                
+              </th>
+              <th class="table-td" onclick={handleStrategySorting}>
+              <span class="flex-label">
+                <span>Goal Strategy</span>
+                <i class={arrowGoalStrategy}></i>
+              </span>
+              </th>
+
+              <th class="table-td" onclick={handleStatusSorting}>
+                <span class="flex-label">
+                  <span>Goal Status</span>
+                  <i class={arrowGoalStatus}></i>
+                </span>    
+              </th>
+
+
+              <th class="table-td" style="text-align: center;" onclick={handleEffectivenessSorting}>
+                <span class="flex-label">
+                  <span>Effectiveness</span>
+                  <i
+                  class={arrowEffectiveness}></i>
+                </span>
+                 </th>
+              <th class="table-td" style="text-align: center;" onclick={handleAdherenceSorting}>
+                <span class="flex-label">
+                  <span> Adherence </span>
+                  <i
+                  class={arrowAdherence}></i>
+                </span>
+               </th>
+              <th class="table-td" style="text-align: center;" onclick={handleLastDateSorting}>
+                <span class="flex-label">
+                  <span> Last Check In</span>
+                  <i
+                  class={arrowLastCheckInDate}></i>
+                </span>
+                </th>
+              <th style="width:100px"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={myGoals} for:item="goal">
+              <tr key={goal.keyId} class="table-tr">
+
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Focus Area</span>{goal.focusArea}
+                </td>
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Goal</span>{goal.goalName}
+                </td>
+
+               <td class="table-td">
+                  <span class="goalsTableMobileHeader">Goal Strategy</span>{goal.StrategyTitle}
+                </td>
+
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Goal Status</span>{goal.GoalStrategyStatus}
+                </td>
+                
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Effectiveness</span> {goal.goalEffectiveness}
+                </td>
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Adherence</span>{goal.goalAdherence}
+                </td>
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Last Check-in</span>{goal.LastCheckInDate}
+                </td>
+                <td style="text-align: center; display:block" >
+                  <div style="display: flex; align-items: center;" class="edit-td-icon">
+                    <img src={editIcon} class="editImageIcon" onclick={handleViewGoal} data-value={goal.keyId}>
+                    <p style="padding-right:6px; padding-top:5px;"> Edit</p>
+                  </div>
+                </td>
+              </tr>
+
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div if:true={isAddGoal}>
+      <div class="add-goal-container">
+        <div class="head">
+
+        </div>
+        <div class="add-goal-Heading">
+          Add a New Goal
+        </div>
+
+        <div class="add-goal-focus">
+          <label class="add-goal-label" for="">Goal Type  <span if:false={isGoalType} style="color: red;">This Field is required*</span>  </label> <br />
+          <select id="goalType-select" class="add-goal-name" onchange={handleGoalTypeChange}>
+            <option value="">Select a Goal Type</option>
+            <template for:each={goalTypeOptions} for:item="goalTypeName">
+              <option key={goalTypeName} value={goalTypeName}>{goalTypeName}</option>
+            </template>
+          </select>
+        </div>
+
+        <div class="add-goal-focus">
+          <label class="add-goal-label" for="">Focus Area<span if:false={isFocusArea} style="color: red;">This Field is required*</span>
+            <!-- <lightning-helptext style="vertical-align: 1px;" content="How well do you
+          feel like you were
+          executing each
+          particular strategy
+          in a given time
+          period. 1 to 10
+          not meant to be
+          always better or
+          worse."></lightning-helptext> -->
+          </label> <br />
+          <select id="focusarea-select" class="add-goal-name" onchange={handlefocusAreaChange}>
+            <option value="">Select a Focus Area</option>
+            <template for:each={focusArealistdistinct} for:item="focusAreaName">
+              <option key={focusAreaName} value={focusAreaName}>{focusAreaName}</option>
+            </template>
+          </select>
+
+
+        </div>
+        <div class="add-goal-focus">
+          <label class="add-goal-label">Goal Name <span if:false={isGoalName} style="color: red;">This Field is required*</span></label> <br />
+          <select id="goal-select" class="add-goal-name" onchange={handlegoalNameChange}>
+            <option value="">Select a goal</option>
+            <template for:each={goallistbyfocusarea} for:item="goal">
+              <option key={goal.goalId} value={goal.goalId}>{goal.goalName}</option>
+            </template>
+            <option if:false={isShared} value="addCustomGoal">Add your custom goal</option>
+          </select>
+          <div if:true={isAddCustomGoal} class="goal-input-container" style=" margin-top: 10px">
+            <input type="text" class="add-goal-name" placeholder="Enter your goal" id="goal-input"
+              onchange={handlecustomgoalNameChange} />
+          </div>
+        </div>
+
+
+
+
+
+        <div class="add-goal-focus">
+          <label class="add-goal-label">Strategy<span if:false={isStrategy} style="color: red;">This Field is required*</span>  <span if:false={isStrageyAdded} style="color: red;"> &nbsp; Goal added with the same Strategy , Goal Status : {existingGoalStatus}</span> </label><br />
+          <select id="strategy-select" class="add-goal-name" onchange={handlegoalStrategyChange}>
+            <option value="">Select a Strategy</option>
+            <template for:each={goalStrategies} for:item="strategy">
+              <option key={strategy.strategyId} value={strategy.strategyId}>{strategy.strategyName}</option>
+            </template>
+            <option value="add-own">Add Your Own Strategy</option>
+          </select>
+          <br />
+
+
+          <div if:true={isAddCustomStrategy} id="strategy-input-container">
+
+            <input type="text" id="customstrategy-input1" class="add-goal-name" placeholder="Enter your strategy"
+              onchange={handlecustomgoalStrategyChange} maxlength="999" />
+            <input type="text" id="customstrategy-input2" class="add-goal-name" placeholder="Enter strategy description"
+              onchange={handlecustomgoalStrategyDescChange} maxlength="999" />
+          </div>
+          <!--
+          <div style="text-align: right;">
+            <input type="button" value="Add Strategy" class="btn-plus" onclick={handleAddGoalStrategy} />
+          </div>
+          -->
+          <br />
+          <label class="add-goal-label"
+            style="font-size: 16px;color: gray;width: 70%;margin-right: 5rem;">{strategyDescription}</label>
+          <br />
+<!--
+          <div if:true={isStrategyAdded}>
+            <div class="editProgressContainer">
+              <div class="editProgressHeader">
+                Assigned Strategies
+              </div>
+              <div>
+                
+                <table class="data-table">
+                  <tbody>
+                    <template for:each={userSelectedStrategies} for:item="strategy">
+                      <tr key={strategy.strategyId} class="edit-td">
+                        <td style="width: 100%; font-weight: normal; color: black;">{strategy.strategyName}
+                          <div style="width: 100%; color: gray; font-size: 14px;">
+                            {strategy.description}
+                          </div>
+                        </td>
+                        <td>
+                          <button class="btnRemoveStrategy" onclick={handleUserSelectedStrategyDelete}
+                            key={strategy.strategyId} data-value={strategy.strategyId}>Remove</button>
+                        </td>
+                      </tr>
+                    </template>
+                  </tbody>
+                </table>
+              </div>
+            </div>
+           
+
+          </div>
+           -->
+
+
+
+
+          <br />
+          <div if:true={isManager} style="text-align: center;">
+            <label class="add-goal-label" style="">Share Goal To Team </label>
+            <label class="toggle-switch">
+
+              <input type="checkbox" onchange={changeToggle} />
+              <span class="toggle-switch-slider"></span>
+            </label>
+          </div>
+
+          <div class="add-goal-btn">
+            
+            <button onclick={handleCancelGoal}>Cancel</button>
+            <button onclick={handleAddGoal}>Add Goal</button>
+          </div>
+        </div>
+      </div>
+    </div>
+
+    <!--Start of Edit View-->
+    <div if:true={isViewGoal}>
+      <div class="edit-container">
+        <div class="head">
+
+        </div>
+        <div class="add-goal-Heading">
+          Edit Goal
+        </div>
+
+        <template if:true={viewGoal.SharedBy}>
+          <div class="editProgressContainer">
+            <div class="editProgressHeader">Shared By</div>
+            <input class="editProgressTextArea" style="margin-bottom: 5px;border:none;" type="text"
+              value={viewGoal.SharedBy} readonly>
+          </div>
+        </template>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Focus Area
+            <lightning-helptext style="vertical-align: 1px;" content="How well do you
+          feel like you were
+          executing each
+          particular strategy
+          in a given time
+          period. 1 to 10
+          not meant to be
+          always better or
+          worse."></lightning-helptext>
+          </div>
+          <input class="editProgressTextArea" style="margin-bottom: 5px;border:none;" type="text"
+            value={viewGoal.focusArea} readonly>
+        </div>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Name</div>
+          <input type="text" class="editProgressTextArea" style="margin-bottom: 5px;border:none;"
+            value={viewGoal.goalName} readonly>
+        </div>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Effectiveness
+            <lightning-helptext style="vertical-align: 1px;" content="How well do you
+          feel like you were
+          executing each
+          particular strategy
+          in a given time
+          period. 1 to 10
+          not meant to be
+          always better or
+          worse."></lightning-helptext>
+          </div>
+          <div class="editProgressBody">
+            <span class="editProgressCol1">
+              <input type="range" style="margin-bottom: 0px;" min="0" max="10" value={viewGoal.goalEffectiveness}
+                onchange={handleuserGoalgoalEffectiveness} />
+                <div class="sliderLabelContainer">
+                  <span style="text-align: left;width: 50%;">Low</span><span
+                    style="text-align: right;width: 50%;">High</span>
+                </div>
+            </span>
+            <span class="range-slider__value">{userGoalgoalEffectiveness}</span>
+          </div>
+        </div>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Adherence
+            <lightning-helptext style="vertical-align: 1px;" content="How well do you
+          feel like you met
+          the overall goal for
+          the week? (1 - not
+          at all and 10
+          completely).
+          Realize this can change each week
+          and is not always
+          better."></lightning-helptext>
+          </div>
+          <div class="editProgressBody">
+            <span class="editProgressCol1">
+              <input type="range" style="margin-bottom: 0px;" min="0" max="10" value={viewGoal.goalAdherence}
+                onchange={handleuserGoalgoalAdherence} />
+                <div class="sliderLabelContainer">
+                  <span style="text-align: left;width: 50%;">Low</span><span
+                    style="text-align: right;width: 50%;">High</span>
+                </div>
+            </span>
+            <span class="range-slider__value">{userGoalgoalAdherence}</span>
+          </div>
+        </div>
+
+        <div class="tb-par-container">
+          <div class="editProgressContainer">
+          <!--
+            <div class="editProgressHeader">Assigned Strategies</div>
+            <table class="data-table">
+              <tbody>
+                <template for:each={userGoalStrategiesData} for:item="strategy">
+                  <tr key={strategy.strategyId} class="edit-td">
+
+                    <td style="width: 100%;font-weight:normal;color:black;">{strategy.strategyName}
+                      <br />
+                      <div style="width: 100%;color: gray; font-size: 14px;">
+                        {strategy.description}
+                      </div>
+                    </td>
+                    <td>
+                      <button class="btnRemoveStrategy" onclick={handleStrategyDelete} key={strategy.strategyId}
+                        data-value={strategy.strategyId}>Remove</button>
+                    </td>
+                  </tr>
+                </template>
+
+              </tbody>
+            </table>
+        -->
+          </div>
+
+          <div class="editProgressContainer">
+            <div class="editProgressHeader" style="margin-bottom: 30px;">Strategy <span if:false={isCustomStrategyEntered}>*</span> <span if:true={isGoalStrategyExist} style="color: red;"> &nbsp; Goal exists with the same Strategy , Goal Status : {existingGoalStatus}</span></div>
+            <select id="strategy-select_edit"  class="add-goal-name" onchange={handlegoalStrategyChange}>
+              
+              <template for:each={goalStrategies} for:item="strategy">
+                <option if:true={strategy.isSelected} key={strategy.strategyId} selected value={strategy.strategyId}>{strategy.strategyName}</option>
+                <option if:false={strategy.isSelected} key={strategy.strategyId}  value={strategy.strategyId}>{strategy.strategyName}</option>
+              </template>
+              <option value="add-own" >Add Your Own Strategy</option>
+            </select>
+            <br />
+            <div if:true={isAddCustomStrategy} id="strategy-input-container_edit">
+              <input type="text" id="customstrategy-input1_edit" class="add-goal-name"
+                placeholder="Enter your strategy name" onchange={handlecustomgoalStrategyChange} />
+              <input type="text" id="customstrategy-input3" class="add-goal-name"
+                placeholder="Enter strategy description" onchange={handlecustomgoalStrategyDescChange} />
+            </div>
+            <!--
+            <div style="width: 100%; text-align: right;">
+              <input type="button" value="Assign" class="btn-plus" onclick={handleEditGoalStrategy} />
+            </div>
+          -->
+            <label class="add-goal-label" style="font-size: 16px;color: gray;    text-align: justify;
+    display: block;
+    padding-left: 10px;
+    padding-right: 10px;">{strategyDescription}</label>
+          </div>
+        </div>
+
+<div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Status</div>
+                   <select id="goalstrategystatus-select_edit" class="add-goal-name"  onchange={handlegoalStrategystatusChange}>
+              <option value={userGoalgoalStrategyStatus} selected>{userGoalgoalStrategyStatus}</option>
+              <template for:each={goalStrategyStatusList} for:item="statuslist">
+                <option key={statuslist.statusName} value={statuslist.statusName}>{statuslist.statusName}</option>
+              </template>
+            
+            </select>
+</div>
+      
+
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Manager's Feedback</div>
+          <textarea type="text" cols="200" rows="3" maxlength="1000" class="edit-input" readonly>
+              {viewGoal.ManagerFeedback}
+          </textarea>
+        </div>
+        <!-- <div class="edit-check-box" style="margin-bottom: 20px;margin-top:20px;">
+          <label class="add-goal-label">Active </label>
+          <label class="toggle-switch">
+
+            <input type="checkbox" checked={isChecked} onchange={handleuserGoalActive} />
+            <span class="toggle-switch-slider"></span>
+          </label>
+        </div> -->
+        <div class="div-button">
+
+         
+          <button onclick={handleSaveCancelGoal}>Cancel</button>
+          <button onclick={handleSaveGoal}>Save</button>
+        </div>
+      </div>
+
+
+    </div>
+    <!--End Of Edit View-->
+
+    <div if:true={isMyTeam} class="team-tb-container">
+      <div class="team-table-container">
+        <table class="team-data-table">
+          <thead>
+            <tr class="table-th">
+              <th class="table-td" onclick={handleUserNameSortingMyTeam}>
+                <span> Name &nbsp;<i class={arrowUserNameMyTeam}></i></span>
+
+              </th>
+              <th class="table-td" onclick={handleUserTitleSortingMyTeam}>Title&nbsp;<i
+                  class={arrowUserTitleMyTeam}></i>
+              </th>
+
+              <th class="table-td" style="text-align: center;">
+                <span>Stress level &nbsp;<i class={arrowTitleMyTeam}></i></span>
+
+              </th>
+              <th class="table-td" style="text-align: center;">
+                <span>
+                  Focus Quality <br />
+
+                </span>
+
+              </th>
+              <th class="table-td" style="text-align: center;">
+                <span>
+                  Time in Flow State <br />
+
+                </span>
+
+              </th>
+              <th style="width:100px"></th>
+
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={myTeamList} for:item="team">
+              <tr class="table-tr" key={team.Id}>
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Name</span>{team.Name}
+                </td>
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Title</span>{team.Title}
+                </td>
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Stress Level</span>{team.StressLevel}
+                </td>
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Focus Quality</span>{team.FocusQuality}
+                </td>
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Time In Flow State</span>{team.TimeInFlowState}
+                </td>
+                <!-- <td class="table-td" style="text-align: center;">
+
+                  <img class="editImageIcon" onclick={handleViewUserGoals} data-value={team.Id} src={editIcon}>
+                </td> -->
+                <td style="text-align: center; display:block" >
+                  <div style="display: flex; align-items: center;" class="edit-td-icon">
+                    <!-- <img src={editIcon} class="editImageIcon" onclick={handleViewGoal} data-value={goal.keyId}> -->
+                    <p style="padding-right:6px; padding-top:5px; cursor:pointer" onclick={handleViewUserGoals} data-value={team.Id}> View</p>
+                  </div>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+    </div>
+
+    <div if:true={isMyTeamUserProgress}>
+      <div class="add-goal-Heading" style="margin-top: 30px; margin-bottom: 50px;">
+        View for Member: {myTeamMemberName}
+      </div>
+      <div class="progress-container">
+        <div class="progress-wrapper">
+          <div class={stressLeveluser_css}>
+            <span class="progress-text">{myTeamUserProgress.stressLevel}
+            </span>
+          </div>
+          <div class="progress-description">Stress Level
+            <div><lightning-helptext content="With no means to
+          be overally
+          crtically and you
+          look across the
+          time period how
+          stressed were you
+          this week at the
+          Focus area level."></lightning-helptext>
+            </div>
+            
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class={focusQualityuser_css}>
+            <span class="progress-text">{myTeamUserProgress.focusQuality}
+            </span>
+          </div>
+          <div class="progress-description">Focus Quality
+            <div><lightning-helptext content="How well do you
+          think you focused
+          on the focus area
+          this week. (is this
+          redundantly
+          captured at a
+          strategy level?)"></lightning-helptext>
+            </div>
+          </div>
+        </div>
+        <div class="progress-wrapper">
+          <div class={timeInFlowStateuser_css}>
+            <span class="progress-text">{myTeamUserProgress.timeInFlowState}
+            </span>
+          </div>
+          <div class="progress-description">Time in Flow
+            <div><lightning-helptext content="Estimate the time
+          in Flow. As a
+          reminder Flow is
+          dedicated focus
+          time (Can read
+          more here link)"></lightning-helptext></div>
+          </div>
+        </div>
+      </div>
+
+      <div class="challengesContainer">
+        <div class="challengesHeader">Challenges faced <lightning-helptext style="vertical-align: 1px;" content="Add any particular
+          notes to support
+          the sorts you left
+          at a strategy or
+          goal level."></lightning-helptext></div>
+        <div class="challengesBody">{myTeamUserProgress.challengesFaced}</div>
+      </div>
+
+      <div class="successContainer">
+        <div class="successHeader">Success Stories <lightning-helptext style="vertical-align: 1px;" content="Add any
+        accomplishments
+        or positive vibes
+        from goals or
+        activities this
+        week."></lightning-helptext></div>
+        <div class="successBody">{myTeamUserProgress.successStories}</div>
+      </div>
+
+
+      <div class="btn-goal1">
+
+        <div class="">
+          <select class="goaloptions" onchange={handlesusergoaloption}>
+            <option value="InProgress">In Progress Goals</option>
+            
+            <option value="Established">Established Goals</option>
+             <option value="Deactivated">Deactivated Goals</option>
+             <option value="SharedGoals">Shared Goals</option>
+            <option value="AllGoals">All Goals</option>
+
+          </select>
+        </div>
+
+      </div>
+      <div class="table_center">
+        <table id="data-table_userGoals" class="table-container">
+          <thead>
+            <tr class="table-th">
+              <th class="table-td" onclick={handleFocusAreaSortingMyTeam}>Focus Area &nbsp;<i
+                  class={arrowFocusAreaMyTeam}></i></th>
+              <th class="table-td" onclick={handleGoalSortingMyTeam}>Goals &nbsp;<i class={arrowGoalMyTeam}></i></th>
+<th class="table-td" onclick={handleStrategySortingMyTeam}>Goal Strategy &nbsp;<i class={arrowStrategyMyTeam}></i></th>
+<th class="table-td" onclick={handleStatusSortingMyTeam}>Goal Status &nbsp;<i class={arrowStatusMyTeam}></i></th>
+
+
+              <th class="table-td" style="text-align: center;" onclick={handleEffectivenessSortingMyTeam}>Goal
+                Effectiveness &nbsp;<i class={arrowEffectivenessMyTeam}></i></th>
+              <th class="table-td" style="text-align: center;" onclick={handleAdherenceSortingMyTeam}>Goal Adherence
+                &nbsp;<i class={arrowAdherenceMyTeam}></i></th>
+              <th class="table-td" style="text-align: center;" onclick={handleLastDateSortingMyTeam}>Last Check In
+                &nbsp;<i class={arrowLastCheckInDateMyTeam}></i></th>
+              <th style="text-align: center;"></th>
+            </tr>
+          </thead>
+          <tbody>
+            <template for:each={myTeamUserGoals} for:item="userGoal">
+              <tr key={userGoal.keyId} class="table-tr">
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Focus Area#</span>{userGoal.focusArea}
+                </td>
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Goal#</span>{userGoal.goalName}
+                </td>
+
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Goal#</span>{userGoal.StrategyTitle}
+                </td>
+                <td class="table-td">
+                  <span class="goalsTableMobileHeader">Goal#</span>{userGoal.GoalStrategyStatus}
+                </td>
+
+
+
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Effectiveness#</span> {userGoal.goalEffectiveness}
+                </td>
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Adherence#</span> {userGoal.goalAdherence}
+                </td>
+                <td class="table-td" style="text-align: center;">
+                  <span class="goalsTableMobileHeader">Last Check-in#</span>{userGoal.LastCheckInDate}
+                </td>
+                <td style="text-align: center;">
+                  <img class="editImageIcon" src={editIcon} onclick={handleViewUserGoalDetails}
+                    data-value={userGoal.keyId}>
+                </td>
+              </tr>
+            </template>
+          </tbody>
+        </table>
+      </div>
+
+    </div>
+
+    <div if:true={isMyTeamUserView}>
+
+      <div class="edit-container">
+        <div class="add-goal-Heading" style=" margin-top: 30px; margin-bottom: 50px;">
+          View for Member: {myTeamMemberName}
+        </div>
+
+        <template if:true={myTeamUserViewGoal.SharedBy}>
+          <div class="editProgressContainer">
+            <div class="editProgressHeader">Shared By</div>
+            <input class="editProgressTextArea" style="margin-bottom: 5px;border:none;" type="text"
+              value={myTeamUserViewGoal.SharedBy} readonly>
+          </div>
+        </template>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Focus Area</div>
+          <input class="editProgressTextArea" style="margin-bottom: 5px;border:none;" type="text"
+            value={myTeamUserViewGoal.focusArea} readonly>
+        </div>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Name</div>
+          <input type="text" class="editProgressTextArea" style="margin-bottom: 5px;border:none;"
+            value={myTeamUserViewGoal.goalName} readonly>
+        </div>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Effectiveness
+            <lightning-helptext style="vertical-align: 1px;" content="How well do you
+          feel like you were
+          executing each
+          particular strategy
+          in a given time
+          period. 1 to 10
+          not meant to be
+          always better or
+          worse."></lightning-helptext>
+          </div>
+          <div class="editProgressBody">
+            <span class="editProgressCol1">
+              <input type="range" style="margin-bottom: 0px;" min="0" max="10"
+                value={myTeamUserViewGoal.goalEffectiveness} disabled />
+                <div class="sliderLabelContainer">
+                  <span style="text-align: left;width: 50%;">Low</span><span
+                    style="text-align: right;width: 50%;">High</span>
+                </div>
+            </span>
+            <span class="range-slider__value">{myTeamUserViewGoal.goalEffectiveness}</span>
+          </div>
+        </div>
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Adherence
+            <lightning-helptext style="vertical-align: 1px;" content="How well do you
+          feel like you met
+          the overall goal for
+          the week? (1 - not
+          at all and 10
+          completely).
+          Realize this can change each week
+          and is not always
+          better."></lightning-helptext>
+          </div>
+          <div class="editProgressBody">
+            <span class="editProgressCol1">
+              <input type="range" style="margin-bottom: 0px;" min="0" max="10" value={myTeamUserViewGoal.goalAdherence}
+                disabled />
+                <div class="sliderLabelContainer">
+                  <span style="text-align: left;width: 50%;">Low</span><span
+                    style="text-align: right;width: 50%;">High</span>
+                </div>
+            </span>
+            <span class="range-slider__value">{myTeamUserViewGoal.goalAdherence}</span>
+          </div>
+        </div>
+
+        <div class="tb-par-container">
+          <div class="editProgressContainer">
+            <div class="editProgressHeader">Assigned Strategies</div>
+            <table class="data-table">
+              <tbody>
+                <template for:each={userMyTeamGoalStrategiesData} for:item="strategy">
+                  <tr key={strategy.strategyId} class="edit-td">
+
+                    <td style="width: 100%;font-weight:normal;color:black;">{strategy.strategyName}
+                      <br />
+                      <div style="width: 100%;color: gray; font-size: 14px;">
+                        {strategy.description}
+                      </div>
+                    </td>
+                  </tr>
+                </template>
+              </tbody>
+            </table>
+          </div>
+        </div>
+
+  <div class="editProgressContainer">
+          <div class="editProgressHeader">Goal Status</div>
+          <input type="text" class="editProgressTextArea" style="margin-bottom: 5px;border:none;"
+            value= {myTeamUserViewGoal.GoalStrategyStatus} readonly>
+        </div>
+      
+
+        <div class="editProgressContainer">
+          <div class="editProgressHeader">Manager's Feedback</div>
+          <textarea type="text" cols="200" rows="3" maxlength="1000" class="edit-input"
+            onchange={handleManagerFeedbackChange}>
+            {myTeamUserViewGoal.ManagerFeedback}
+          </textarea>
+          <div style="width: 100%; text-align: right;">
+            <input type="button" value="Update Feedback" class="btn-plus" style="width:150px;"
+              onclick={handleUpdateFeedbackTeamUserGoal} />
+          </div>
+        </div>
+
+        <!-- <div class="edit-check-box" style="margin-bottom: 20px;margin-top:20px;">
+          <label class="add-goal-label">Goal Status : {myTeamUserViewGoal.GoalStrategyStatus} </label>
+          
+        <label class="toggle-switch">
+            <input type="checkbox" checked={isMyTeamUserChecked} disabled />
+            <span class="toggle-switch-slider"></span>
+          </label> 
+
+        </div> -->
+
+        
+
+        <div class="div-button">
+          <button onclick={handleBackMyTeamUserGoal}>Go Back</button>
+        </div>
+      </div>
+    </div>
+
+  </div>
+</template>

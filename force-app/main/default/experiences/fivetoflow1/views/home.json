@@ -1,0 +1,76 @@
+{
+  "appPageId" : "a24ffc6e-f088-4e60-890c-e142ee4cfb89",
+  "componentName" : "siteforce:sldsOneColLayout",
+  "dataProviders" : [ ],
+  "id" : "8cd69764-a94d-4080-94fa-75b5529d8d38",
+  "label" : "Home",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "richTextValue" : "<img src=\"https://fivetoflow.force.com/file-asset/F2F_Main_Logo?v=1\" width=50%> </img>"
+      },
+      "componentName" : "forceCommunity:htmlBlock",
+      "id" : "07362507-4888-4bed-9ca4-bf45a220b632",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "d68995c4-bfd7-4b25-b45c-fd3603c48e45",
+    "regionName" : "header",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "AutoStart" : true,
+        "AutoStart_Delay" : "",
+        "Clicked" : false,
+        "CreateObject" : "",
+        "CreateRecordtypeId" : "",
+        "EditRecord" : false,
+        "FlowAction" : "",
+        "FlowName" : "",
+        "FlowRecordId" : "",
+        "Label" : "Go To Survey",
+        "LastElement" : false,
+        "NavigateToUrl" : "/survey",
+        "OutputCreatedID" : "false",
+        "QuickActionName" : "",
+        "buttonPosition" : "",
+        "buttonStyle" : "",
+        "buttonVarient" : "brand",
+        "defaultFieldValues" : "",
+        "specificrecordId" : ""
+      },
+      "componentName" : "navbutton:NavigationButton",
+      "id" : "870c3664-2d82-47ef-9965-47260ce11534",
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "82bdc44e-28b6-4dab-bb15-3ef77064f858",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "id" : "8002b04d-cec3-4816-b987-42c1b6e8ef49",
+    "regionName" : "footer",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "",
+        "title" : "Home"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "899ba56f-1769-437f-b385-a77c4710e6ca",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "9e9a9a35-e02c-486b-8e37-a6e417988faf",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "home"
+}

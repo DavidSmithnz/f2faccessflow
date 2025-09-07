@@ -1,0 +1,144 @@
+<template>
+  <template if:false={isExpandedView}>
+    <div class="search-sort-bar">
+      <div class="search-input">
+        <input type="text" placeholder="Search" oninput={handleSearchChange} />
+        <span class="search-icon">
+          <img src={searchIcon} alt="search-icon"/>
+        </span>
+      </div>
+     
+      <select onchange={handleSortChange}>
+        <option value="recommended">Recommended</option>
+        <option value="dateNewest">Newest First</option>
+        <option value="dateOldest">Oldest First</option>
+        <option value="popularity">Most Watched</option>
+        <option value="alphabetical">Alphabetical (A-Z)</option>
+      </select>
+    </div>
+
+    <div class="module-grid">
+      <template for:each={groupedByCourse} for:item="courseGroup">
+        <div key={courseGroup.courseId} class="course-block">
+          <h2>{courseGroup.courseName}</h2>
+          <!-- <h2>{courseGroup.moduleNumber}: {courseGroup.courseName}</h2> -->
+          <template for:each={courseGroup.modules} for:item="mod">
+            <div key={mod.id} class="module-card">
+              <div class="video-item">
+                <div class="video-left">
+                  <span class="video-icon" style="cursor: pointer;">
+                    <img src={courseIcon} data-id={mod.id} onclick={handleViewDetails}>
+                  </span>
+                  <div class="video-info">
+                    <div class="video-top">
+                      <span class="video-title" data-id={mod.id} onclick={handleViewDetails}>{mod.name}</span>
+                      <span class="video-duration">{mod.duration}</span>
+                    </div>
+              
+                    <div class="progress-container">
+                      <div class="progress-bar" style={mod.progressStyle}></div>
+                    </div>
+                  </div>
+                  <!-- Before code -->
+                  <!-- <div class="video-text">
+                    <span><h3 class="course-title" data-id={mod.id} onclick={handleViewDetails}>{mod.name}</h3></span>
+                    <span>
+                          
+                                <div class="progress-container">
+                                  <div class="progress-bar" style={mod.progressStyle}></div>
+                                </div>
+                              
+                          
+                    </span>
+                  </div> -->
+                  <!-- <div class="video-content">
+                    <h3 class="course-title">{mod.name}</h3>
+                    
+                    <div class="progress-container">
+                      <div class="progress-bar" style={mod.progressStyle}></div>
+                    </div>
+                  </div> -->
+                </div>
+               
+                 <!-- <span class="video-action">    before code -->
+                  <!-- <p style="float: left; color:#002060; font-size:14px"  >Duration: {mod.duration}</p>
+                               -->
+                  <!-- <template if:true={mod.watchedPercentage}>
+                    <template if:true={mod.isCompleted}>
+                      <p class="progress-text">Completed</p>
+                    </template>
+                    <template if:false={mod.isCompleted}>
+                      <p class="progress-text" style="text-decoration: underline; cursor:pointer" data-id={mod.id} onclick={handleViewDetails}>{mod.watchedPercentage}% Progress</p>
+                    </template>
+                  </template>
+                  <template if:false={mod.watchedPercentage}>
+                    <p class="progress-text" style="text-decoration: underline; cursor:pointer" data-id={mod.id} onclick={handleViewDetails}>Start</p>
+                  </template> -->
+                  <!-- <p class="progress-text">Duration: {mod.duration}</p>
+                </span>  before code-->
+              
+        
+              </div>
+              <!-- <h3 class="course-title">{mod.name}</h3> -->
+
+              <!-- <template if:true={mod.watchedPercentage}>
+                <div class="progress-container">
+                  <div class="progress-bar" style={mod.progressStyle}></div>
+                </div>
+                <p class="progress-text">{mod.watchedPercentage}% watched</p>
+                
+              </template> -->
+
+              <!-- <div style="margin-top:2rem; height:1.5rem">
+                <p style="float: left;"><strong>Duration:</strong> {mod.duration}</p>
+                <button class="chat-send-button" data-id={mod.id} onclick={handleViewDetails}>➤</button>
+              </div> -->
+            </div>
+          </template>
+        </div>
+      </template>
+    </div>
+  </template>
+
+  <!-- Expanded View -->
+  <template if:true={isExpandedView}>
+    <div class="expanded-module">
+      <button class="back-btn" onclick={handleBack}>&larr; Back</button>
+      <h2>{selectedModule.name}</h2>
+      <p class="videoDescription">{selectedModule.description}</p>
+      <p style="color:#002060;"><strong style="color: #002060;">Duration:</strong> {selectedModule.duration}</p>
+
+      <template if:true={selectedModule.videoUrl}>
+        <video controls controlslist="nodownload" oncontextmenu={disableRightClick} class="video" ontimeupdate={handleVideoProgress} onloadedmetadata={handleMetadataLoaded}>
+          <source src={selectedModule.videoUrl} type="video/mp4" />
+        </video>
+      </template>
+
+      <!-- Resume from last watched position -->
+      <template if:true={selectedModule.watchedPercentage}>
+        <p class="resume-text" style="color: #002060;">
+           You previously watched {selectedModule.watchedPercentage}%. Resuming...
+        </p>
+      </template>
+
+      <!-- Rating section -->
+      <template if:true={selectedModule.stars}>
+        <div class="rating">
+          <template for:each={selectedModule.stars} for:item="star">
+            <template if:false={selectedModule.hasRated}>
+              <span key={star.value} class={star.className} data-value={star.value} data-module-id={selectedModule.id}
+                onclick={handleRatingClick} title="Click to rate">★</span>
+            </template>
+            <template if:true={selectedModule.hasRated}>
+              <span key={star.value} class={star.className} title="You already rated">★</span>
+            </template>
+          </template>
+        </div>
+
+        <template if:true={selectedModule.hasRated}>
+          <p class="rating-note" style="color: #002060;"> You rated this {selectedModule.userRating} out of 5</p>
+        </template>
+      </template>
+    </div>
+  </template>
+</template>

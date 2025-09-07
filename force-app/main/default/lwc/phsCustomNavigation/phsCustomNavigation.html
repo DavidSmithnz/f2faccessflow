@@ -1,0 +1,55 @@
+<template>
+    <div class="flex-container">      
+      <div class="row">
+        <div class="column">          
+          <a href="/courses" >
+          <div class="card">
+              <img class='cardImage' src={courseicon} />
+              <div class='cardLabel'>Courses</div>  
+            </div> 
+          </a>         
+        </div>
+      
+        <!-- <div class="column">
+          <a href="https://survey.takethewellnesswave.com/">
+            <div class="card">
+              <img class='cardImage' src={wwicon} />
+              <div class='cardLabel'>Wellness Wave</div>  
+            </div>   
+          </a>       
+        </div> -->
+        <div class="column">
+          <div class="card" onclick={handleWWClick}>
+            <img class='cardImage' src={wwicon} />    
+            <div class='cardLabel'>Wellness Wave</div>          
+          </div>      
+      </div>
+      
+        <div class="column">
+            <div class="card" onclick={handleGoalClick}>
+              <img class='cardImage' src={goalicon} />    
+              <div class='cardLabel'>My Plan</div>          
+            </div>      
+        </div>
+        <div class="column">
+          <a href="/coach" >
+          <div class="card">
+            <img class='cardImage' src={coachesicon} />    
+              <div class='cardLabel'>Coach</div>   
+          </div> 
+        </a>    
+        </div>
+        <template lwc:if={isMobile}>
+        <div class="column">
+          <a href="/coach" >
+          <div class="card">
+            <div class='cardLabel' style="z-index: 1000;"></div>  
+          </div> 
+        </a>    
+        </div>
+      </template>
+       
+      </div>
+      
+    </div>
+</template>

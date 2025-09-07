@@ -1,0 +1,110 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<Package xmlns="http://soap.sforce.com/2006/04/metadata">
+
+    <!-- Apex Classes -->
+    <types>
+        <members>phsBatchWellnessUserQuestionSync</members>
+        <members>phsChatBaseController</members>
+        <members>phsChatBaseHandler</members>
+        <members>phsCoachController</members>
+        <members>phsCommonGoal1</members>
+        <members>phsCourseController</members>
+        <members>phsCourseProgressController</members>
+        <members>phsGoalController</members>
+        <members>phsHeaderController</members>
+        <members>phsHomePageController</members>
+        <members>phsMyTeamsController</members>
+        <members>phsOnboardingController</members>
+        <members>phsProfileController</members>
+        <members>phsSharedGoalController</members>
+        <members>phsStrategyController</members>
+        <members>phsSurveyUserQuestionsController</members>
+        <members>phsSurveyWellnessQuestionSyncTest</members>
+        <members>phsUserGoalStrategyController</members>
+        <members>phsUserGoalsController</members>
+        <members>phsUserPerformanceController</members>
+        <members>phsUtilityController</members>
+        <members>phsWellnessWaveController</members>
+        <name>ApexClass</name>
+    </types>
+
+    <!-- Lightning Web Components -->
+    <types>
+        <members>phsAddGoal</members>
+        <members>phsChatBot</members>
+        <members>phsCoachBanner</members>
+        <members>phsCoachCheckIn</members>
+        <members>phsCoachCheckOut</members>
+        <members>phsCoachHistory</members>
+        <members>phsCoachHome</members>
+        <members>phsCoachTip</members>
+        <members>phsCourses</members>
+        <members>phsCustomFooter</members>
+        <members>phsCustomForgotPassword</members>
+        <members>phsCustomGoal</members>
+        <members>phsCustomHeader</members>
+        <members>phsCustomHomeTip</members>
+        <members>phsCustomLogin</members>
+        <members>phsCustomLogo</members>
+        <members>phsCustomManageGoal</members>
+        <members>phsCustomNavigation</members>
+        <members>phsCustomProfile</members>
+        <members>phsHomePage</members>
+        <members>phsHomeQATiles</members>
+        <members>phsHomeSlideshow</members>
+        <members>phsMyGoals</members>
+        <members>phsMyProfile</members>
+        <members>phsOnBoardingQuestion</members>
+        <members>phsSessionInitializer</members>
+        <members>phsWellnessCheckin</members>
+        <members>phsWellnessWave</members>
+        <name>LightningComponentBundle</name>
+    </types>
+
+    <!-- Custom Objects -->
+    <types>
+        <members>phsCheckInConversation__c</members>
+        <members>phsCheckOutConversation__c</members>
+        <members>phsCoachCheckIn__c</members>
+        <members>phsCoachCheckOut__c</members>
+        <members>phsCoachcheckOutQuestions__c</members>
+        <members>phsCoreElements__c</members>
+        <members>phsCoreElementSubCategory__c</members>
+        <members>phsCoreElementSubCategoryDetails__c</members>
+        <members>phsCourseModule__c</members>
+        <members>phsCourseModuleRating__c</members>
+        <members>phsCourseProgress__c</members>
+        <members>phsCourses__c</members>
+        <members>phsFocusArea__c</members>
+        <members>phsGoals__c</members>
+        <members>phsHomeSlideShow__c</members>
+        <members>phsOnboardingUserAnswer__c</members>
+        <members>phsSharedGoals__c</members>
+        <members>phsSharedGoalsStrategies__c</members>
+        <members>phsStrategies__c</members>
+        <members>phsTips__c</members>
+        <members>phsUGPerformance__c</members>
+        <members>phsUserGoals__c</members>
+        <members>phsUserGoalsStrategies__c</members>
+        <members>phsUserOnboardingAnswerOptions__c</members>
+        <members>phsUserOnboardingQuestion__c</members>
+        <members>phsUserSurveyQuestions__c</members>
+        <!-- CMDT definition -->
+        <members>Chatbase_Config__mdt</members>
+        <name>CustomObject</name>
+    </types>
+
+    <!-- Custom Metadata Records -->
+    <types>
+        <members>Chatbase_Config__mdt.*</members>
+        <name>CustomMetadata</name>
+    </types>
+
+    <!-- Experience Cloud Site -->
+    <types>
+        <members>*</members>
+        <name>ExperienceBundle</name>
+    </types>
+
+    <version>60.0</version>
+</Package>

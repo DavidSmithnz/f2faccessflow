@@ -1,0 +1,106 @@
+.wellness-tip{
+  margin-bottom: 1.3rem;
+}
+
+.card {
+  box-shadow: 0 4px 8px 0 rgb(138 190 225);
+  text-align: center;
+  background-color: #0077c0;
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #0077c0;
+  margin-top: 20px;
+}
+.title
+{
+  background-color: #0077c0;
+  margin: 0 auto;
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
+}
+.tipContainer
+{
+  background-color: #0077c0;
+margin-top: 7px;
+display: flex;
+flex-direction: row;
+padding-left: 10px;
+  padding-right: 10px;
+}
+.cardMessage
+{
+font-size: 1.1rem;
+text-align: left;
+color: white;
+margin-top: 2px;
+background-color: #0077c0;
+width: 100%;
+padding-left: 5px;
+}
+button {
+  /* width: 100px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #0070c0;
+  color: white; */
+  width: 300px;
+  padding: 10px;
+  background-color: #0077c0;
+  border-color: #0077c0;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  font-size: 1.3rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+@media (max-width: 768px) {
+.cardMessage
+{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  text-align: justify !important;
+  font-size: 0.9rem;
+}
+
+}
+.brand-text {
+  height:20px;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.r-circle {
+  display: inline-block;
+  position: relative;
+  top: -6px; 
+  left:-1px;
+  margin-right: 5px;             
+  width: 8px;
+  height: 1em;
+  font-size: 2.8rem;
+  line-height: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+@media(min-width:1300){
+.survey-site-page{
+  width: 100%;
+}
+}
+@media (max-width:400px){
+  .cardMessage{
+    font-size: 0.87rem;
+  }
+}
+@media (max-width:768px){
+  .tipContainer{
+    padding-left: 5px;
+  }
+}

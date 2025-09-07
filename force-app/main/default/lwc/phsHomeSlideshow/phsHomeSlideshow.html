@@ -1,0 +1,175 @@
+<template>
+  <div class="container ">
+    <div class="card-wrapper swiper">
+      <ul class="card-list swiper-wrapper">
+        <!-- Slide 1 -->
+          
+          
+          
+          
+     <li class="card-item swiper-slide firstCard">
+          <span class="card-link">
+            <img src={homepageSliderImage1} alt="Card Image" class="card-image" style="height:100%">
+            <!-- Survey overlay omitted for brevity -->
+            <template lwc:if={surveyDetails}>
+              <div style="top: 0; position: absolute; width:100%">
+                <div style="padding: 10px;padding-top: 2px;border-radius: 13px;" lwc-3iojtsaf1hh="">
+                  <p style="color: White; font-weight: bold; padding-left: 5px; font-size: 120%; margin-top: 10px; /* margin-bottom: 10px;"
+                    lwc-3iojtsaf1hh="">Welcome, {firstName}!</p>
+                  <p style="font-size: 90%;color: white; padding-left:6px; padding-top: 5px;font-weight: bold;margin-bottom:10px"
+                    lwc-3iojtsaf1hh="">Your Wellness Wave diagnostics score</p>
+                </div>
+                <div class="badgeContainer">
+                  <div class="badge">
+                    <template lwc:if={surveyDetails.peopleScore}>
+                      <span class="wwScoreContainer1">
+                        <span class={wwScorePeople_css}>
+                          <span class="wwScoreText peopleText">
+                            <p class="wwScoreNumber">{surveyDetails.peopleScore}</p>
+                            <p>People</p>
+                          </span>
+                        </span>
+                      </span>
+                    </template>
+                    <template lwc:if={surveyDetails.cultureScore}>
+                      <span class="wwScoreContainer1">
+                        <span class={wwScoreCulture_css}>
+                          <span class="wwScoreText cultureText">
+                            <p class="wwScoreNumber">{surveyDetails.cultureScore}</p>
+                            <p>Culture</p>
+                          </span>
+                        </span>
+                      </span>
+                    </template>   
+                    <template lwc:if={surveyDetails.processScore}>
+                      <span class="wwScoreContainer1">
+                        <span class={wwScoreProcess_css}>
+                          <span class="wwScoreText processText">
+                            <p class="wwScoreNumber">{surveyDetails.processScore}</p>
+                            <p>Process</p>
+                          </span>
+                        </span>
+                      </span>
+                    </template>   
+                  </div>
+                  <div class="badge">          
+                    <template lwc:if={surveyDetails.technologyScore}>
+                      <span class="wwScoreContainer1">
+                        <span class={wwScoreTechnology_css}>
+                          <span class="wwScoreText technologyText">
+                            <p class="wwScoreNumber">{surveyDetails.technologyScore}</p>
+                            <p>Technology</p>
+                          </span>
+                        </span>
+                      </span>
+                    </template>  
+                    <template lwc:if={surveyDetails.analyticsScore}>
+                      <span class="wwScoreContainer1">
+                        <span class={wwScoreAnalytics_css}>
+                          <span class="wwScoreText analyticsText">
+                            <p class="wwScoreNumber">{surveyDetails.analyticsScore}</p>
+                            <p>Analytics</p>
+                          </span>
+                        </span>
+                      </span>
+                    </template>                      
+                    <template lwc:if={fileDownloadUrl}>
+                      <span class="wwScoreContainer1">
+                        <span class="wwScore progress-square progressDownload progress-100">
+                          <span class="wwScoreText">
+                            <a class="downloadText" href={fileDownloadUrl}>
+                              <p><img src={downloadIcon} alt="Download Image" class="downloadIcon" /></p>
+                              <p>Download</p>
+                            </a>
+                          </span>
+                        </span>
+                      </span>
+                      <!-- <p class="badge badge-13"><a style="color:#4f6a95 !important; text-decoration:none !important"
+                          href={fileDownloadUrl}>Download Wellness Wave report <img src={downloadIcon} alt="Download Image"
+                            class="downloadIcon" /></a></p> --> 
+                    </template>
+                  </div>
+                </div>
+              </div>
+            </template>
+          </span>
+        </li> 
+        
+         
+        
+        <!-- Slide 2 -->
+         
+          
+          
+            
+            
+              
+       <li class="card-item swiper-slide">
+          <span class="card-link">
+            <img src={homepageSliderImage2} alt="Card Image" class="card-image">
+           <!-- Progress overlay omitted for brevity -->
+            <div style="top: 0; position: absolute; width:100%">
+              <div style="padding: 10px;padding-top: 2px;border-radius: 13px;" lwc-3iojtsaf1hh="">
+                <p style="color: White; font-weight: bold; padding-left: 5px; font-size: 120%; margin-top: 10px; /* margin-bottom: 10px;"
+                  lwc-3iojtsaf1hh="">Weekly Progress</p>
+                <p style="font-size: 90%;color: white; padding-left:6px; padding-top: 5px;font-weight: bold;"
+                  lwc-3iojtsaf1hh="">Your progress towards goals</p>
+                <div class="progress-container">
+                  <div class="progress-wrapper">
+                    <div class={stressLevel_css} style={bgImage}>
+                     <span class="progress-text">{stressLevel__c}/10</span>
+                    </div>
+                    <!-- <div class={stressLevel_css} >
+                      <span class="progress-text">{stressLevel__c}/10</span>
+                     </div> -->
+                    <p class="progress-description">Calmness Level</p>
+                    <!-- <p class="span-progress-text">{stressLevel__c}/10</p> -->
+                  </div>
+                  <div class="progress-wrapper">
+                    <div class={focusQuality_css}  style={bgImage}>
+                       <span class="progress-text">{focusQuality__c}/10</span>
+                    </div>
+                    <p class="progress-description">Focus Quality</p>
+                    <!-- <p class="span-progress-text">{focusQuality__c}/10</p> -->
+                  </div>
+                  <div class="progress-wrapper">
+                    <div class={timeInFlowState_css}  style={bgImage}>
+                     <span class="progress-text">{timeInFlowState__c}/10</span>
+                    </div>
+                    <p class="progress-description">Time in Flow</p>
+                    <!-- <p class="span-progress-text">{timeInFlowState__c}/10</p> -->
+                  </div>
+                </div>
+              </div>              
+            </div>
+          </span>
+        </li> 
+
+        <!-- Dynamic slides -->
+        <!-- <template for:each={slideShowDetails} for:item="slideShowDetail">
+          <li key={slideShowDetail.Id} class="card-item swiper-slide">
+            <span class="card-link">
+              <template lwc:if={isMobile}>
+                <lightning-formatted-rich-text class="card-image" value={slideShowDetail.Mobile_Image__c}></lightning-formatted-rich-text>
+              </template>
+              <template lwc:if={isDesktop}>
+                <lightning-formatted-rich-text class="card-image" value={slideShowDetail.Desktop_Image__c}></lightning-formatted-rich-text>
+              </template>
+            </span>
+          </li>
+        </template> -->
+      </ul>
+
+      <!-- Navigation arrows (desktop only) -->
+      <template lwc:if={isDesktop}>
+        <div class="swiper-button-prev"></div>
+        <div class="swiper-button-next"></div>
+      </template>
+
+      <!-- Pagination dots (mobile only) -->
+      <template lwc:if={isMobile}>
+        <div class="custom-swiper swiper-pagination"></div>
+      </template>
+    </div>
+  </div>
+</template>

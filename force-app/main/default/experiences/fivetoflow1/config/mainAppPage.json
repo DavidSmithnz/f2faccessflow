@@ -1,0 +1,11 @@
+{
+  "cmsSettings" : { },
+  "currentThemeId" : "a05d2fc1-dc6b-4b85-920b-3d0e18545e19",
+  "headMarkup" : "<!-- Hotjar Tracking Code for https://fivetoflow.force.com/s -->\n<script>\n    (function(h,o,t,j,a,r){\n        h.hj=h.hj||function(){(h.hj.q=h.hj.q||[]).push(arguments)};\n        h._hjSettings={hjid:2020616,hjsv:6};\n        a=o.getElementsByTagName('head')[0];\n        r=o.createElement('script');r.async=1;\n        r.src=t+h._hjSettings.hjid+j+h._hjSettings.hjsv;\n        a.appendChild(r);\n    })(window,document,'https://static.hotjar.com/c/hotjar-','.js?sv=');\n</script>\n<link rel=\"shortcut icon\" href=\"/file-asset/FaviconF2F?v=1\" type=\"image/png\" />\n<meta name=\"title\" property=\"og:title\" content=\"Wellness Wave Diagnostic Tool\">\n<meta name=\"image\" property=\"og:image\" content=\"https://brandcast-cdn.global.ssl.fastly.net/6e9e18ec-bf3c-4c8a-9951-1b6ac8f5d9f6/48ce8b15-f622-4276-bf2e-d0bd6b1b49db/14f1a49bd9fa41fa5aa53fa3dac646e2/F2F-Main-Logo.png\">\n<script type=\"text/javascript\">   \nwindow.heap=window.heap||[],heap.load=function(e,t){window.heap.appid=e,window.heap.config=t=t||{};var r=document.createElement(\"script\");r.type=\"text/javascript\",r.async=!0,r.src=\"https://cdn.heapanalytics.com/js/heap-\"+e+\".js\";var a=document.getElementsByTagName(\"script\")[0];a.parentNode.insertBefore(r,a);for(var n=function(e){return function(){heap.push([e].concat(Array.prototype.slice.call(arguments,0)))}},p=[\"addEventProperties\",\"addUserProperties\",\"clearEventProperties\",\"identify\",\"resetIdentity\",\"removeEventProperty\",\"setEventProperties\",\"track\",\"unsetEventProperty\"],o=0;o<p.length;o++)heap[p[o]]=n(p[o])};   \nheap.load(\"2904849685\"); \n</script>",
+  "id" : "a24ffc6e-f088-4e60-890c-e142ee4cfb89",
+  "isLockerServiceEnabled" : true,
+  "isRelaxedCSPLevel" : true,
+  "label" : "main",
+  "templateName" : "Starter Template",
+  "type" : "appPage"
+}

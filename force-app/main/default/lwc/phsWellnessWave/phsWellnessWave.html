@@ -1,0 +1,241 @@
+<template>
+    <div if:true={isWellnessWaveScore}>
+        <div class="wellness-container">
+   
+            <div class="inner-wellness-container">
+              <div if:false={isSurveyTaken} class="wellness-tip">
+            
+
+                <div class="card">
+                <div class="title">Diagnostics Status </div>
+                <div class="tipContainer">
+                    <div class="cardMessage">
+                      <!-- Looks like you have not taken the Wellness Wave.  -->
+                      <span class="brand-text">
+                        Looks like you haven’t taken the Wellness Wave
+                        <span class="r-circle">&#174;</span>
+                        !
+                      </span>
+                      <!-- <p onclick={handleSurveyPage}  style="text-decoration: underline;">
+                        Please click here to assess your readiness for future change.</p> -->
+                        <p onclick={handleSurveyPage}  style="text-decoration: underline; cursor:pointer">
+                          Click here to get started.</p> 
+                    </div>
+                    
+                   
+                </div>
+            </div>
+              </div>
+
+
+                  <div class="wellness-tip">
+                <!-- <div class="tips">
+                  <h2>Tip from your survey results</h2>
+                  <p>{wellnessObj.TipOfTheDay}</p>
+                </div> -->
+
+                <div class="card">
+                <div class="title">Tip from your diagnostics results</div>
+                <div class="tipContainer">
+                    <div class="cardMessage">
+                      {wellnessObj.TipOfTheDay}
+                    </div>
+                    <!-- <lightning-helptext class='cardImage' style="vertical-align: 1px;" content="Add any particular
+          notes to support
+          the sorts you left
+          at a strategy or
+          goal level."></lightning-helptext> -->
+                   
+                </div>
+            </div>
+              </div>
+
+              <div class="wellness-top" style={bgImage}>
+                <!-- <div class="wellness-div">
+                  
+                  <div class="progress-container">
+                    <div class="progress-wrapper">
+                      <div class={progressSurveyPeople}>
+                        <span class="progress-text">{surveyDetailsObj.peopleScore}</span>
+                        <span class="progress-subtext" style="color: black;">People</span>
+                      </div>
+                    </div>
+      
+                    <div class="progress-wrapper">
+                      <div class={progressSurveyCulture}>
+                        <span class="progress-text">{surveyDetailsObj.cultureScore} </span>
+                        <br />
+                        <span class="progress-subtext" style="color: black;">Culture</span>
+                      </div>
+                    </div>
+      
+                    <div class="progress-wrapper">
+                      <div class={progressSurveyProcess}>
+                        <span class="progress-text">{surveyDetailsObj.processScore}</span>
+                        <span class="progress-subtext" style="color: black;">Process</span>
+                      </div>
+                    </div>
+                    <div class="progress-wrapper">
+                      <div class={progressSurveyTechnology}>
+                        <span class="progress-text">{surveyDetailsObj.technologyScore}</span>
+                        <span class="progress-subtext" style="color: black;">Technology</span>
+                      </div>
+                    </div>
+                    <div class="progress-wrapper">
+                      <div class={progressSurveyAnalytics}>
+                        <span class="progress-text">{surveyDetailsObj.analyticsScore}</span>
+                        <span class="progress-subtext" style="color: black;">Analytics</span>
+                      </div>
+                    </div>
+                  </div>
+                </div> -->
+                <div class="wellness-div">
+                  <h1>Your Ongoing Wellness Wave Score</h1>        
+                  <div class="progress-container">
+                    <div class="progress-wrapper" style="--inner-color:#002060" >
+                        
+                      <div  class={progressWWPeople} onclick={handleShowDetailsPeople}  >
+                       
+                         <span class="progress-text">{wellnessObj.People}</span>
+                        <span class="progress-subtext" >People</span>
+                      
+                    </div>
+                    </div>
+      
+                    <div class="progress-wrapper" style=" --inner-color:#0070C0">
+                      <div class={progressWWCulture} onclick={handleShowDetailsCulture}>
+                        <span class="progress-text">{wellnessObj.Culture}</span>
+                        <br />
+                        <span class="progress-subtext" >Culture</span>
+                      </div>
+                    </div>
+      
+                    <div class="progress-wrapper" style=" --inner-color:#00B0F0">
+                      <div style="background-color: yellow;" class={progressWWProcess} onclick={handleShowDetailsProcess}>
+                        <span  class="progress-text">{wellnessObj.Process}</span>
+                        <span class="progress-subtext" >Process</span>
+                      </div>
+                    </div>
+                    <div class="progress-wrapper" style=" --inner-color:#35B9C7">
+                      <div class={progressWWTechnology} onclick={handleShowDetailsTechnology}>
+                        <span class="progress-text">{wellnessObj.Technology}</span>
+                        <span class="progress-subtext" >Technology</span>
+                      </div>
+                    </div>
+                    <div class="progress-wrapper" style=" --inner-color:#6DDCD9">
+                      <div class={progressWWAnalytics} onclick={handleShowDetailsAnalytics}>
+                        <span class="progress-text">{wellnessObj.Analytics}</span>
+                        <span class="progress-subtext">Analytics</span>
+                      </div>
+                    </div>
+                    <div lwc:if={fileDownloadUrl} class="progress-wrapper" style=" --inner-color:#2183d7">
+                      <!-- <div class="progress-wrapper" style=" --inner-color:#6DDCD9">
+                          <a class="downloadText" href={fileDownloadUrl} style="display: flex; justify-content:center ">
+                         <span class="progress-text"><img src={downloadIcon} alt="" style="width:40px;"></span>
+                        <span class="progress-subtext">Download</span>
+                            </a>
+                      </div> -->
+                      <div class="progress-circle progress-100">
+                        <a class="downloadText" href={fileDownloadUrl} style="display: flex; justify-content:center; align-items:center">
+                       <span class="progress-text"><img src={downloadIcon} alt="" style="width:40px;"></span>
+                      <span class="progress-subtext">Download</span>
+                          </a>
+
+
+                   
+                    </div>
+                    </div>
+                  </div>
+                   <div class="catDesc">
+                   <b> {categoryTitle}</b> {categoryDescriptionDetails}
+                    </div>
+
+
+                </div>
+              </div>
+
+
+          
+              
+
+    <!-- <div if:false={isSurveyTaken} class="wellness-tip">
+            
+
+                <div class="card">
+                <div class="title">Diagnostics Status </div>
+                <div class="tipContainer">
+                    <div class="cardMessage">
+                      Looks like you have not taken the Wellness Wave. <p onclick={handleSurveyPage}  style="text-decoration: underline;">
+                        Please click here to assess your readiness for future change.</p>
+                    </div>
+                    
+                   
+                </div>
+            </div>
+              </div> -->
+              
+
+
+
+
+            </div>
+          </div>
+      
+
+    </div>
+
+    <!-- <div if:true={isWellnessWaveDetails} class="wellness-subpage-container" >
+        <button onclick={handlebacktoScore}>Back</button>
+        <div class="inner-subpage-container"></div>
+        <div class="subpage-container">
+          <div class="sub-page">
+            <div class="img-wellness"><img  src={peopleImageUrl}  ></div>
+            <div class="wellness-desc">
+              <h1>PEOPLE</h1>
+              <h4>{categoryDescription.People}</h4>
+              <p>Current Score : <span class="span-score">{wellnessObj.People}</span></p>
+            </div>
+          </div>
+          <div class="sub-page">
+            <div class="img-wellness"><img  src={cultureImageUrl}  ></div>
+            <div class="wellness-desc">
+              <h1>CULTURE</h1>
+              <h4>{categoryDescription.Culture}  </h4>
+              <p>Current Score : <span class="span-score">{wellnessObj.Culture}</span></p>
+            </div>
+          </div>
+          <div class="sub-page">
+            <div class="img-wellness"><img  src={processImageUrl}  ></div>
+            <div class="wellness-desc">
+              <h1>PROCESS</h1>
+              <h4>{categoryDescription.Process}</h4>
+              <p>Current Score : <span class="span-score">{wellnessObj.Process}</span></p>
+            </div>
+          </div>
+          <div class="sub-page">
+            <div class="img-wellness"><img  src={technologyImageUrl}  ></div>
+            <div class="wellness-desc">
+              <h1>TECHNOLOGY</h1>
+              <h4>{categoryDescription.Technology}</h4>
+              <p>Current Score : <span class="span-score">{wellnessObj.Technology}</span></p>
+            </div>
+          </div>
+          <div class="sub-page">
+            <div class="img-wellness"><img  src={analyticsImageUrl}  ></div>
+            <div class="wellness-desc">
+              <h1>ANALYTICS</h1>
+              <h4>{categoryDescription.Analytics}</h4>
+              <p>Current Score : <span class="span-score">{wellnessObj.Analytics}</span></p>
+            </div>
+          </div>
+        </div>
+        
+        
+    </div> -->
+
+    <div if:true={isSurveySiteShow} class="survey-site">
+      <button onclick={handleSurveyPageBack}>Back</button>
+      <br/>
+      <iframe src="https://app.fivetoflow.com/WellnessWave" height="850"  width="100%" style="border: none;"></iframe>
+    </div>
+</template>

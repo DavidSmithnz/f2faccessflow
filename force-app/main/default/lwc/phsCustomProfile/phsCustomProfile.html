@@ -1,0 +1,230 @@
+<template>
+    <div class="container">
+      <div if:true={isProfile}>
+        <header>
+       
+          <h2>Profile Settings</h2>
+        </header>
+  
+        <section class="account-info">
+          <div class="info">
+            <p><strong>Full Name</strong></p>
+            <p>{userProfile.Name}</p>
+          </div>
+          <div class="info">
+            <p><strong>Mobile</strong></p>
+            <p>{userProfile.Mobile}</p>
+          </div>
+         
+          <div class="info">
+            <p><strong>Phone</strong></p>
+            <p>{userProfile.Phone}</p>
+          </div>
+
+          <div class="info">
+            <p><strong>Email</strong></p>
+            <p><a href={mailToEmail}>{userProfile.Email}</a></p>
+          </div>
+          <div class="info">
+            <p><strong>Fax</strong></p>
+            <p>{userProfile.Fax}</p>
+          </div>
+          <div class="info">
+            <p><strong>ZIP/Postcode</strong></p>
+            <p>{userProfile.PostalCode}</p>
+          </div>
+          <div class="info">
+            <p><strong>Date of Birth</strong></p>
+            <p>{userProfile.DateOfBirth}</p>
+          </div>
+          <div class="info">
+            <p><strong>Department</strong></p>
+            <p>{userProfile.Department}</p>
+          </div>
+
+          <div class="info">
+            <p><strong>Account Name</strong></p>
+            <p>{userProfile.AccountName}</p>
+          </div>
+
+          <div class="info">
+            <p><strong>Reports To</strong></p>
+            <p>{userProfile.ReportsTo}</p>
+          </div>
+
+          <div class="info">
+            <p><strong>App Role</strong></p>
+            <p>{userProfile.AppRole}</p>
+          </div>
+        </section>
+      
+        <section class="settings">
+          <!-- <div class="info">
+            <p><strong>Membership and Billing</strong></p>
+            <p>&gt;</p>
+          </div> -->
+          <div class="info">
+            <p><strong>Change Password</strong></p>
+            <!-- <p>&gt;</p> -->
+            <p class="text-ref">Coming Soon</p>
+          </div>
+          <!-- <div class="info">
+            <p><strong>Shake for Feedback</strong></p>
+            <input type="checkbox" />
+          </div> -->
+          <div class="info">
+            <p><strong>Referral Program</strong></p>
+            <p class="text-ref">Coming Soon</p>
+          </div>
+          <div class="info">
+            <p><strong>Data Privacy</strong></p>
+            <p class="text-ref">Coming Soon</p>
+            <!-- <p>&#128274;</p> -->
+          </div>
+        </section>
+      </div>
+       
+     
+     
+        <div if:true={isFeedback} class="feedback-form-container">
+      <h2>Feedback </h2>
+      <p class="comingsoon">(Coming Soon)</p>
+      <form>
+        <label for="rating">Rate the app:</label>
+        <select name="rating" id="rating">
+          <option value="5">⭐⭐⭐⭐⭐</option>
+          <option value="4">⭐⭐⭐⭐</option>
+          <option value="3">⭐⭐⭐</option>
+          <option value="2">⭐⭐</option>
+          <option value="1">⭐</option>
+        </select>
+        <textarea
+          name="feedback"
+          rows="4"
+          placeholder="Share your experience..."
+          required
+        ></textarea>
+        <br/>
+        <button  type="submit" disabled>Submit Feedback</button>
+      </form>
+    </div>
+      
+       <!-- Profile
+      <div class="table-container">
+          <table>
+            <thead>
+              <tr>
+                <td class="user-icon">
+                  <img src="/images/profile.png" />
+                </td>
+                <td class="user-info">
+                  <span class="name">John Doe</span>
+                  <br />
+                  <span class="email">johndoe@example.com</span>
+                </td>
+              </tr>
+              <tr>
+                <td class="user-icon">
+                  <img src="/images/profile.png" />
+                </td>
+                <td class="user-info">Profile</td>
+              </tr>
+              <tr>
+                <td class="user-icon">
+                  <img src="/images/chat.png" />
+                </td>
+                <td class="user-info">Feedback</td>
+              </tr>
+              <tr>
+                <td class="user-icon">
+                 
+                  <img src="/images/settings.png" />
+                </td>
+                <td class="user-info">Settings</td>
+              </tr>
+              <tr>
+                <td class="user-icon" style="font-size: 1.5rem">?</td>
+                <td class="user-info">Help</td>
+              </tr>
+
+              <tr>
+                <td class="user-icon">
+                 
+                  <img src="/images/logout.png" />
+                </td>
+                <td class="user-info">logout</td>
+              </tr>
+            </thead>
+            <tbody></tbody>
+          </table>
+        </div>
+      -->
+     
+      <div if:true={isContactUs} class="contact-form-container">
+      <h2>Contact Us </h2>
+      <p class="comingsoon">(Coming Soon)</p>
+      <form>
+        <input type="text" name="name" placeholder="Name" required />
+        <input type="email" name="email" placeholder="Email" required />
+        <input type="tel" name="phone" placeholder="Phone Number" required />
+        <input type="text" name="subject" placeholder="Subject" required />
+        <textarea
+          name="message"
+          rows="4"
+          placeholder="Message"
+          required
+        ></textarea>
+        <button type="submit" disabled>Submit</button>
+      </form>
+    </div>
+      
+      <div if:true={isSettings} class="settings-container">
+        <h2>Settings</h2>
+          <div class="setting-item">
+            <div class="setting-left">
+              <img
+                src={securityImageUrl}
+                alt="Security"
+                class="setting-icon"
+              />
+              <div class="setting-name">
+                <span>Security</span>
+                <span class="coming-soon">coming soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="setting-item">
+            <div class="setting-left">
+              <img
+                src={notificationImageUrl}
+                alt="Notifications"
+                class="setting-icon"
+              />
+              <div class="setting-name">
+                <span >Notifications</span>
+                <!-- <label class="toggle-switch">
+                  <input type="checkbox"  />
+                  <span class="toggle-switch-slider"></span>
+                </label> -->
+                <span class="coming-soon">coming soon</span>
+              </div>
+            </div>
+          </div>
+          <div class="setting-item">
+            <div class="setting-left">
+              <img
+                src={privacyImageUrl}
+                alt="Privacy"
+                class="setting-icon"
+              />
+              <div class="setting-name">
+                <span>Privacy</span>
+                <span class="coming-soon">coming soon</span>
+              </div>
+            </div>
+          </div>
+    
+      </div>
+
+    </div>
+</template>

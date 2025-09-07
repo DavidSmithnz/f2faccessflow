@@ -1,0 +1,13 @@
+.chatContainer
+{
+    height: 100%;
+    width: 100%;
+    min-height: 500px;
+}
+
+@media screen and (max-width: 600px) {
+    .chatContainer
+    {
+        max-width: 500px !important;
+    }
+  }

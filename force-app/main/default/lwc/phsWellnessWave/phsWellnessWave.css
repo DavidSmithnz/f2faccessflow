@@ -1,0 +1,1057 @@
+/* * {
+  margin: 0;
+  padding: 0;
+  font-family: "Avenir", "Avenir Next", sans-serif;
+}
+.inner-wellness-container {
+  width: 100%;
+  margin: 1rem auto;
+}
+.wellness-top {
+  display: flex;
+  justify-content: space-between;
+ 
+  padding: 1.2rem;
+  width: 100%;
+}
+.wellness-div {
+  width: 49%;
+  height: 50vh;
+  margin-top: 1rem;
+  border: 1px solid #0070c0;
+  border-radius: 5px;
+  color: white;
+  background-color: white;
+}
+.tips {
+  width: 95%;
+  background-color: #0070c0;
+  margin-top: 1rem;
+  padding: 0.5rem;
+  margin: 1rem auto;
+  color: white;
+  
+  border-radius: 4px;
+}
+.tips h2 {
+  text-align: center;
+  font-size: 1rem;
+  font-weight: 600;
+  background-color: #0070c0;
+}
+.tips p {
+  background-color: #0070c0;
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 5px;
+}
+.progress-container {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  grid-template-rows: auto auto;
+  justify-items: center;
+  gap: 2rem;
+  padding: 4rem 0 0.3rem 0.3rem;
+  max-width: 800px;
+  margin: auto;
+  background-color: white;
+}
+
+.progress-wrapper {
+  text-align: center;
+  position: relative;
+  background-color: white;
+}
+.progress-wrapper:nth-child(4),
+.progress-wrapper:nth-child(5) {
+  grid-column: span 1;
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00b0f0 0deg,
+    #00b0f0 var(--progress),
+    #ddd var(--progress) 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+ .progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  background: white;
+  border-radius: 50%;
+} 
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  background: conic-gradient(#00b0f0 var(--progress, 0%), #ddd 0%);
+  transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.progress-text {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  background: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: 800;
+  color: black;
+  text-anchor: middle;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 10;
+}
+
+.progress {
+  fill: none;
+  stroke: #00b0f0;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 314;
+  stroke-dashoffset: calc(314 - (75 / 100) * 314);
+  transform-origin: center;
+}
+.bgcolorset
+{
+  background-color: red;
+}
+
+
+.product-description {
+  color: #4f4f4f;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.progress-text {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #000;
+  background: transparent;
+  z-index: 1;
+}
+.progress-subtext {
+  position: absolute;
+  bottom: 20px;
+  font-size: 0.6rem;
+  color: black;
+  z-index: 1;
+  background-color: white;
+}
+
+.progress-80 {
+  --progress: 80%;
+}
+
+.progress-50 {
+  --progress: 50%;
+}
+.progress-10 {
+  --progress: 10%;
+}
+.progress-20 {
+  --progress: 20%;
+}
+.progress-30 {
+  --progress: 30%;
+}
+.progress-40 {
+  --progress: 40%;
+}
+.progress-60 {
+  --progress: 60%;
+  
+}
+.progress-70 {
+  --progress: 70%;
+}
+.progress-90 {
+  --progress: 90%;
+}
+.progress-100 {
+  --progress: 100%;
+}
+.card {
+  box-shadow: 0 4px 8px 0 rgb(138 190 225);
+  text-align: center;
+  background-color: #0077c0;
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #0077c0;
+  margin-top: 20px;
+}
+
+
+.cardImage
+{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    margin-top: -20px;
+}
+
+.cardLabel
+{
+  padding: 10px;
+  color: #0074bf;
+  font: caption;
+}
+
+.title
+{
+  background-color: #0077c0;
+  margin: 0 auto;
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.cardMessage
+{
+font-size: 1.1rem;
+text-align: left;
+color: white;
+margin-top: 2px;
+background-color: #0077c0;
+width: 100%;
+padding-left: 10px;
+}
+
+.tipContainer
+{
+  background-color: #0077c0;
+margin-top: 7px;
+display: flex;
+flex-direction: row;
+padding-left: 10px;
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+.cardMessage
+{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  text-align: justify !important;
+  font-size: 0.9rem;
+}
+.cardImage
+{
+  height: 30px !important;
+  width: 30px !important;
+  margin-right: 10px !important;
+  margin-top: -40px !important;
+  position: absolute !important;
+  right: 0 !important;
+}
+
+}
+@media (max-width: 768px) {
+  .progress-text {
+    font-size: 12px;
+  }
+
+  .progress-container {
+    width: 100%;
+    gap: 5px;
+  }
+  .progress-wrapper {
+    width: 45px;
+    height: 38px;
+    margin-bottom: 2rem;
+  }
+
+  .progress-description {
+    font-size: 15px;
+    text-align: center;
+  }
+  .progress-circle {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    justify-items: left;
+    gap: 2rem;
+    padding: 4rem 0 0.3rem 0.3rem;
+  }
+  .progress-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+  .progress-circle::before {
+    width: 50px;
+    height: 50px;
+  }
+  .progress-text {
+    font-size: 1.2rem;
+  }
+}
+@media screen and (min-width: 768px) {
+  .progress-circle {
+    width: 115px;
+    height: 115px;
+  }
+  .progress-text {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 768px) and (min-width: 600px) {
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progress-circle::before {
+    width: 60px;
+    height: 60px;
+  }
+
+  .progress-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .progress-container {
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+  .progress-circle::before {
+    width: 70px;
+    height: 70px;
+  }
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progress-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+} */
+* {
+  margin: 0;
+  padding: 0;
+  /* background-color: #00b0f0; */
+  font-family: "Avenir", "Avenir Next", sans-serif;
+}
+.inner-wellness-container {
+  width: 100%;
+  margin: 1rem 0;
+  
+}
+.wellness-top {
+  width: 100%;
+  height:77vh;
+  border: 1px solid #0070c0;
+  border-radius: 5px;
+  background-image: var(--bg-img);
+  /* background-image: url("https://fivetoflow--partmar24.sandbox.my.site.com/f2fapp/webruntime/org-asset/ffbb358192/resource/081VD0000009phd/Images/homepageslideshowimages/slideshow1Desktop.jpg"); */
+  background-size: cover; 
+  background-position: center; 
+  background-repeat: no-repeat;
+  background-color: rgba(
+    255,
+    255,
+    255,
+    0.8
+  ); 
+}
+.wellness-div {
+  width: 100%;
+  height: 50vh;
+  margin-top: 1rem;
+  color: white;
+  background: transparent;
+  
+}
+.wellness-div h1{
+  font-size: 1.2rem;
+  font-weight: 700;
+  color: white;
+  margin-left: 20px;
+  background: transparent;
+}
+.wellness-tip{
+  margin-bottom: 1.3rem;
+}
+
+.profile-icon {
+  width: 50px;
+  height: 50px;
+  background-color: #3498db;
+  color: white;
+  font-size: 20px;
+  font-weight: bold;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  border-radius: 50%;
+  margin: 5px;
+}
+.progress-container {
+  display: grid;
+  grid-template-columns: repeat(3,1fr);
+  /* grid-template-columns: repeat(5, 1fr);
+  grid-template-rows: repeat(2, auto);  */
+  justify-items: center;
+  gap: 2rem;
+  padding: 4rem 0 0.3rem 0.3rem;
+  padding-left: 2rem;
+  max-width: 800px;
+  margin: 1rem;
+  place-content: center;
+  background-color: white;
+  background: transparent;
+}
+
+.progress-wrapper {
+  text-align: center;
+  position: relative;
+  background-color: white;
+  width: 180px;
+  height: 180px;
+  background: transparent;
+}
+/* .progress-wrapper:nth-child(4),
+.progress-wrapper:nth-child(5) {
+  grid-column: span 1;
+} */
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00b0f0 0deg,
+    #00b0f0 var(--progress),
+    #ddd var(--progress) 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 90px;
+  height: 90px;
+  /* background: white; */
+  background: var(--inner-color, white);
+  border-radius: 50%;
+}
+
+.progress-circle {
+  width: 120px;
+  height: 120px;
+  border-radius: 50%;
+  position: relative;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: #333;
+  /* background: conic-gradient(#00b0f0 var(--progress, 0%), #ddd 0%); */
+  background: conic-gradient(
+    grey var(--progress, 0%),
+    var(--inner-color, white) var(--progress, 0%) 100%
+  );
+  transition: background 0.3s ease-in-out, opacity 0.3s ease-in-out;
+}
+.progress-text {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  color: white;
+  border-radius: 50%;
+  padding: 5px;
+  font-weight: 800;
+  text-anchor: middle;
+  width: 35px;
+  height: 35px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-bg {
+  fill: none;
+  stroke: #e6e6e6;
+  stroke-width: 10;
+}
+
+.progress {
+  fill: none;
+  stroke: #00b0f0;
+  stroke-width: 10;
+  stroke-linecap: round;
+  stroke-dasharray: 314;
+  stroke-dashoffset: calc(314 - (75 / 100) * 314);
+  transform-origin: center;
+}
+
+
+.product-description {
+  color: #4f4f4f;
+  font-size: 1rem;
+  font-weight: 700;
+  line-height: 18px;
+  text-align: center;
+}
+
+.progress-text {
+  position: absolute;
+  font-size: 1.2rem;
+  font-weight: bold;
+  background: transparent;
+  z-index: 1;
+}
+.progress-subtext {
+  position: absolute;
+  
+  font-size: 0.6rem;
+  top: calc(50% + 8px); 
+  
+  z-index: 1;
+  color: white;
+}
+
+.progress-80 {
+  --progress: 80%;
+}
+
+.progress-50 {
+  --progress: 50%;
+}
+.progress-10 {
+  --progress: 10%;
+}
+.progress-20 {
+  --progress: 20%;
+}
+.progress-30 {
+  --progress: 30%;
+}
+.progress-40 {
+  --progress: 40%;
+}
+.progress-60 {
+  --progress: 60%;
+}
+.progress-70 {
+  --progress: 70%;
+}
+.progress-90 {
+  --progress: 90%;
+}
+.progress-100 {
+  --progress: 100%;
+}
+
+
+.progress-15 {
+  --progress: 15%;
+}
+
+.progress-25 {
+  --progress: 25%;
+}
+.progress-35 {
+  --progress: 35%;
+}
+.progress-45 {
+  --progress: 45%;
+}
+.progress-55 {
+  --progress: 55%;
+}
+.progress-65 {
+  --progress: 65%;
+}
+.progress-75 {
+  --progress: 75%;
+}
+.progress-85 {
+  --progress: 85%;
+}
+.progress-95 {
+  --progress: 95%;
+}
+.progress-5 {
+  --progress: 5%;
+}
+.progress-0 {
+  --progress: 0%;
+}
+
+
+
+.card {
+  box-shadow: 0 4px 8px 0 rgb(138 190 225);
+  text-align: center;
+  background-color: #0077c0;
+  border-radius: 12px;
+  padding-top: 10px;
+  padding-bottom: 10px;
+  border: 1px solid #0077c0;
+  margin-top: 20px;
+}
+
+.cardImage
+{
+    height: 50px;
+    width: 50px;
+    margin-right: 10px;
+    margin-top: -20px;
+}
+
+.cardLabel
+{
+  padding: 10px;
+  color: #0074bf;
+  font: caption;
+}
+
+.title
+{
+  background-color: #0077c0;
+  margin: 0 auto;
+  color: white;
+  font-size: 120%;
+  font-weight: bold;
+  text-align: left;
+  padding-left: 15px;
+}
+
+.cardMessage
+{
+font-size: 1.1rem;
+/* font-weight: 500; */
+text-align: left;
+color: white;
+margin-top: 2px;
+background-color: #0077c0;
+width: 100%;
+padding-left: 10px;
+}
+.catDesc
+{
+width: 90%;
+margin: 1rem auto;
+font-size: 1.2rem;
+text-align: justify;
+hyphens: auto;
+color: white;
+margin-top: 2px;
+padding-left: 10px;
+}
+
+.tipContainer
+{
+  background-color: #0077c0;
+margin-top: 7px;
+display: flex;
+flex-direction: row;
+padding-left: 5px;
+  padding-right: 10px;
+}
+
+@media (max-width: 768px) {
+.cardMessage
+{
+  padding-left: 10px !important;
+  padding-right: 10px !important;
+  text-align: justify !important;
+  font-size: 0.9rem;
+  /* font-size: 18px; */
+  font-weight: 500;
+}
+.cardImage
+{
+  height: 30px !important;
+  width: 30px !important;
+  margin-right: 10px !important;
+  margin-top: -40px !important;
+  position: absolute !important;
+  right: 0 !important;
+}
+
+}
+
+@media (max-width: 768px) {
+  .progress-text {
+    font-size: 12px;
+  }
+
+  .progress-container {
+    width: 100%;
+    gap: 5px;
+  }
+  .progress-wrapper {
+    width: 45px;
+    height: 38px;
+    margin-bottom: 2rem;
+    /* margin-right: 1rem; */
+  }
+
+  .progress-description {
+    font-size: 15px;
+    text-align: center;
+  }
+  .progress-circle {
+    width: 30px;
+    height: 30px;
+  }
+}
+
+@media (max-width: 768px) {
+  .progress-container {
+    width: 100%;
+    display: grid;
+    grid-template-columns: repeat(3, 1fr);
+    grid-template-rows: auto auto;
+    /* justify-items: left; */
+    gap: 2rem;
+    padding: 4rem 0 0.3rem 0.3rem;
+  }
+  .progress-circle {
+    width: 60px;
+    height: 60px;
+    font-size: 1rem;
+  }
+  .progress-circle::before {
+    width: 50px;
+    height: 50px;
+  }
+  .progress-text {
+    font-size: 1.2rem;
+  }
+  .wellness-div{
+    width: 100%;
+    margin-left: 0px;
+  }
+}
+@media screen and (min-width: 768px) {
+  .progress-circle {
+    width: 115px;
+    height: 115px;
+  }
+  .progress-text {
+    font-size: 1.8rem;
+  }
+}
+@media (max-width: 768px) and (min-width: 600px) {
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progress-circle::before {
+    width: 60px;
+    height: 60px;
+  }
+
+  .progress-text {
+    font-size: 1rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .progress-container {
+    width: 85%;
+    flex-direction: row;
+    justify-content: center;
+    gap: 15px;
+  }
+  .progress-circle::before {
+    width: 70px;
+    height: 70px;
+  }
+  .progress-circle {
+    width: 80px;
+    height: 80px;
+  }
+
+  .progress-text {
+    font-size: 1.2rem;
+    font-weight: 800;
+  }
+}
+
+
+
+/* Details Page */
+/* * {
+  margin: 0;
+  padding: 0;
+  
+  font-family: "Avenir", "Avenir Next", sans-serif;
+} */
+
+.inner-subpage-container {
+  width: 90%;
+  margin: 1rem auto;
+}
+.subpage-container {
+  width: 100%;
+  display: flex;
+  justify-content: center;
+  flex-direction: column;
+}
+.sub-page {
+  width: 90%;
+  display: flex;
+  gap: 1rem;
+  margin: 1rem auto;
+  margin-top: 1rem;
+  margin-bottom: 1rem;
+}
+.img-wellness {
+  width: 200px;
+  /* height: 300px; */
+  /* border: 1px solid white; */
+  margin-top: 1rem;
+}
+.wellness-desc {
+  width: 70%;
+  padding: 1rem;
+  color: white;
+  font-size: 1rem;
+  /* font-weight: 600; */
+  background-color: #0070c0;
+}
+.wellness-div h1{
+ width: 100%;
+ /* text-align: center; */
+ font-size: 1.4rem;
+}
+.wellness-desc h1{
+  font-size: 1.3rem;
+  font-weight: 700;
+}
+.wellness-desc h4{
+  font-weight: 400;
+}
+.wellness-desc p{
+  font-weight: 600;
+}
+.wellness-desc .span-score{
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+button {
+  /* width: 100px;
+  padding: 0.5rem;
+  border-radius: 5px;
+  background-color: #0070c0;
+  color: white; */
+  width: 300px;
+  padding: 10px;
+  background-color: #0077c0;
+  border-color: #0077c0;
+  color: #fff;
+  font-size: 15px;
+  border-radius: 10px;
+  font-size: 1rem;
+  font-weight: 600;
+  margin-top: 1rem;
+  margin-bottom: 2rem;
+}
+@media screen  and (max-width:768px){
+  .sub-page{
+    display: flex;
+    flex-direction: column;
+  }
+  .img-wellness{
+    margin-left: 1.6rem;
+  }
+  .wellness-top{
+    /* height:62vh; */
+    height: 75vh;
+  }
+  .catDesc{
+    margin-left: 1.5rem;
+  }
+  .wellness-div h1{
+    width: 100%;
+    text-align: center;
+    font-size: 1rem;
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .progress-container{
+    margin-left:11rem ;
+  }
+  .progress-wrapper {
+    width: 170px; /* increased */
+    height: 170px; /* increased */
+  }
+
+  .progress-circle::before {
+    width: 115px; /* increased */
+    height: 115px; /* increased */
+  }
+
+  .progress-circle {
+    width: 145px; /* increased */
+    height: 145px; /* increased */
+    font-size: 1.6rem; /* increased */
+  }
+
+  .progress-text {
+    font-size: 2rem; /* increased */
+    width: 55px; /* increased */
+    height: 55px; /* increased */
+    margin-bottom: 10px;
+  }
+
+  .progress-subtext {
+    top: calc(50% + 25px); /* adjusted for new center */
+    font-size: 0.85rem; /* increased */
+  }
+}
+@media(max-width:400px){
+  .wellness-top{
+    height:85vh;
+  }
+}
+@media (min-width: 1201px) and (max-width:1300px) {
+  
+  .wellness-top{
+    /* height: 75vh; */
+    height:85vh;
+  }
+}
+@media(min-width:1300px){
+  .wellness-top{
+    height: 63vh;
+  }
+}
+@media screen and (min-width: 768px) and (max-width: 1200px) {  
+  .progress-container{
+    gap:0rem;
+   margin: 1rem auto;
+  }
+  .progress-wrapper{
+    width: 140px;
+    height:140px;
+  }
+  .progress-circle::before{
+    width: 95px;
+    height:95px;
+  }
+  .progress-circle{
+    width: 125px;
+    height:125px;
+  }
+  .wellness-top{
+    height:85vh;
+  }
+}
+@media (min-width:1200px){
+  .progress-container{
+   margin:1rem auto;
+  }
+}
+
+.brand-text {
+  height:20px;
+  position: relative;
+  display: inline-flex;
+  align-items: flex-start;
+}
+
+.r-circle {
+  display: inline-block;
+  position: relative;
+  top: -4px; 
+  left:-1px;
+  margin-right: 5px;             
+  width: 8px;
+  height: 1em;
+  /* font-size: 2.8rem; */
+  line-height: 1em;
+  text-align: center;
+  font-weight: bold;
+}
+@media(max-width:400px){
+  .catDesc{
+    width: 90%;
+    /* margin-left: 2rem; */
+    font-size: 1rem;
+    font-weight: 700;
+    word-spacing: -2px;
+    padding-left: 0;
+  }
+}
+
+@media(min-width:1300px){
+  .survey-site{
+    width: 100%;
+  }
+}
+@media (max-width:400px){
+  .cardMessage{
+    font-size: 0.8rem;
+    font-weight: 500;
+
+  }
+}

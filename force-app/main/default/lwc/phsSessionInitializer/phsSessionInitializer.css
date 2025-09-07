@@ -1,0 +1,274 @@
+/* .profile-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #0077c0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+    right:0;
+    margin-top: -62px;
+}
+
+
+@media screen and (max-width: 768px) 
+{
+    .profile-icon {
+        margin-top: 0px !important;   
+    }
+}  */
+
+
+
+.setting-icon {
+  width: 20px;
+  height: 20px;
+  margin-right: 15px;
+}
+.profile-container {
+    position: absolute;
+    right: 0;
+    margin-top: -62px;
+  }
+  .profile-icon {
+    width: 45px;
+    height: 45px;
+    background-color: #0077c0;
+    color: white;
+    font-size: 20px;
+    font-weight: bold;
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    border-radius: 50%;
+    position: absolute;
+    cursor: pointer;
+     right:0;
+   
+}
+  .profile-dropdown {
+    position: absolute;
+    top: 50px; 
+    right: 0;
+    background-color: white;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    flex-direction: column;
+    min-width: 250px;
+    z-index: 10;
+  }
+  
+  .profile-dropdown.show {
+    display: flex; 
+  }
+  .profile-dropdown-menu {
+    display: flex;
+    align-items: center;
+    padding: 10px;
+    cursor: pointer;
+    border-bottom: 1px solid black;
+  }
+  .profile-coming-soon{
+    width: 100%;
+    display: flex;
+    /* justify-content: space-between; */
+    justify-content: space-evenly;
+  }
+  .span-soon{
+    font-size: 12px;
+    margin-top: 3px;
+  }
+  .profile-dropdown-menu:first-child {
+    border-bottom: 1px solid grey;
+  }
+  
+  .profile-dropdown-menu:hover {
+    background-color: #f0f0f0;
+  }
+  
+  .logout-icon {
+    /* margin-right: 8px; */
+  }
+  
+  .logout-text {
+    width: 60%;
+    font-size: 14px;
+    margin-left: 15px;
+    text-align: left;
+  }
+  
+  /* Responsive adjustment */
+  @media screen and (max-width: 768px) {
+    .profile-container {
+      margin-top: 0px;
+    }
+  }
+  .table-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-x: auto;
+  }
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  
+  .user-icon {
+    width: 60px;
+    text-align: center;
+  }
+  
+  .user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  
+  
+  .user-info {
+    min-width: 150px;
+  }
+  
+  .name {
+    font-size: 1rem;
+    font-weight: bold;
+    /* color: #333; */
+    color:#002060;
+  }
+  
+  .email {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  
+  td {
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  
+  @media screen and (max-width: 600px) {
+    table {
+      font-size: 0.85rem;
+    }
+    .user-icon img {
+      width: 35px;
+      height: 35px;
+    }
+    .name {
+      font-size: 0.9rem;
+    }
+    .email {
+      font-size: 0.75rem;
+    }
+  }
+  
+  * {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+    font-family: Arial, sans-serif;
+  }
+  
+  
+  .table-container {
+    width: 100%;
+    max-width: 800px;
+    margin: 20px auto;
+    overflow-x: auto;
+  }
+  
+  
+  table {
+    width: 100%;
+    border-collapse: collapse;
+    background: white;
+    box-shadow: 0 4px 10px rgba(0, 0, 0, 0.1);
+    border-radius: 10px;
+    overflow: hidden;
+  }
+  
+  
+  th,
+  td {
+    padding: 12px;
+    text-align: left;
+    border-bottom: 1px solid #ddd;
+  }
+  
+  
+  .user-icon {
+    width: 60px;
+    text-align: center;
+  }
+  
+  .user-icon img {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    object-fit: cover;
+  }
+  .user-info {
+    min-width: 150px;
+  }
+  
+  .name {
+    font-size: 1rem;
+    font-weight: bold;
+    /* color: #333; */
+  }
+  
+  .email {
+    font-size: 0.85rem;
+    color: #666;
+  }
+  
+  td {
+    font-size: 0.9rem;
+    color: #444;
+  }
+  
+  @media screen and (max-width: 600px) {
+    table {
+      font-size: 0.85rem;
+    }
+    .user-icon img {
+      width: 45px;
+      height: 45px;
+    }
+    .name {
+      font-size: 0.9rem;
+    }
+    .email {
+      font-size: 0.75rem;
+    }
+  }
+  @media (max-width:600px){
+   .logout-text{
+    width: 50%;
+   }
+  }

@@ -1,0 +1,586 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+  font-family: "Inter", sans-serif;
+  --ssImageHeight: 225px;
+}
+body {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  min-height: 100vh;
+  background: white;
+}
+.card-wrapper {
+  width: 100%;
+}
+
+
+.card-list .card-item {
+  list-style: none;
+  margin-bottom: 20px;
+}
+.card-list .card-item .card-link {
+  display: block;
+  box-shadow: 0 0 8px 0 rgb(138 190 225);
+  background-color: #0070C0;
+  user-select: none;
+  border-radius: 12px;
+  text-decoration: none;
+  transition: 0.2s ease;
+  height: 500px;
+  overflow: hidden;
+  position: relative;
+}
+
+.card-list .card-item .card-link:active {
+  cursor: grabbing;
+}
+.card-list .card-item .card-link:hover {
+  border-color: #5372F0;
+}
+.card-image {
+  width: 100%;
+  /* height: 100%; */
+  border-radius: 10px;
+  object-fit: cover;
+}
+
+.slds-rich-text-area__content span p img{
+  width:800px;
+}
+
+
+.card-list .card-link  .badgeContainer .badge {
+    color: #77caea;
+    width: 100%;
+    font-size: 0.95rem;
+    border-radius: 2px;
+    font-weight: 500;    
+    margin-right: auto;
+    text-align: center;
+    display: table;    
+}
+
+.badgeContainer
+{
+  margin-top:50px;
+}
+.badge-11
+{	
+    margin-top: 20px;
+    
+}
+
+.badge-13
+{
+    margin-top: 2%;
+}
+
+.firstCard
+{
+  background-image: var(--firstCardUrl);
+}
+
+.card-list .card-link .badge-designer {
+  color: #B22485;
+  background: #F7DFF5;
+}
+.card-list .card-link .badge-marketer {
+  color: #B25A2B;
+  background: #FFE3D2;
+}
+.card-list .card-link .badge-gamer {
+  color: #205C20;
+  background: #D6F8D6;
+}
+.card-list .card-link .badge-editor {
+  color: #856404;
+  background: #fff3cd;
+}
+.card-list .card-link .card-title {
+  color: #000;
+  font-size: 1.19rem;
+  font-weight: 600;
+}
+.card-list .card-link .card-button {
+  height: 35px;
+  width: 35px;
+  color: #5372F0;
+  margin: 30px 0 5px;
+  background: none;
+  cursor: pointer;
+  border-radius: 50%;
+  border: 2px solid #5372F0;
+  transform: rotate(-45deg);
+  transition: 0.4s ease;
+}
+.card-list .card-link:hover .card-button {
+  color: #fff;
+  background: #5372F0;
+}
+
+
+
+
+.card-wrapper .swiper-slide-button {
+  color: #5372F0;
+  margin-top: -35px;
+}
+
+.wwSurveyContainer
+{
+  position: absolute;
+  top:0;
+  padding-top: 4% !important;
+  padding-bottom: 2% !important;
+}
+.wwScoreContainer1
+{
+  /* border-radius: 13px;
+  position: relative;
+  padding: 10px;
+  margin: 5px;
+  background-color: #7abfe5;
+  width: 33.33%;
+  color: white; */
+  display: table-cell;
+  width: 33.33%;
+  text-align: center;
+}
+
+.wwScoreContainer
+{
+  display: flex;
+}
+
+.wwScore
+{
+  border-radius: 50%;
+    margin: 0 auto;
+    margin-bottom: 30px;
+}
+
+.wwScoreText
+{
+  border-radius: 50%;
+    margin: 10px;
+    background-color: #2183d7;
+    color: white;
+    font-weight: 800;
+    width: 115px;
+    height:115px;
+    display: block;
+    padding:10px;
+    padding-top:30px;
+    display: flex;
+    flex-direction: column;
+}
+
+.wwScoreNumber{
+    font-size: 20px;
+}
+
+
+@keyframes run {
+  from {
+    transform: translate3d(100%, 0, 0);
+    visibility: visible;
+  }
+}
+
+.barProcess
+{
+  background-color: #00B0F0;
+  width: var(--processWidth, 0%);  
+}
+
+.barCulture
+{
+  background-color: #338dcd;
+  width: var(--cultureWidth, 0%);
+}
+
+.barPeople
+{
+  background-color: #23457b;
+  width: var(--peopleWidth, 0%);
+}
+
+.barTechnology
+{
+  background-color: #77d9d8;
+  width: var(--technologyWidth, 0%);
+}
+
+.barAnalytics
+{  
+  margin-top: 1%;
+  background-color: #adcee9;
+  width: var(--analyticsWidth, 0%);
+}
+
+.peopleText
+{
+  background-color: #002060;
+}
+
+.cultureText
+{
+  background-color: #0070C0;
+}
+
+.processText
+{
+  background-color: #00B0F0;
+}
+
+.technologyText
+{
+  background-color: #35B9C7;
+}
+
+.analyticsText
+{
+  background-color: #6DD7D9;
+}
+.span-progress-text{
+  text-align: center;
+  color:white;
+  /* margin-left: 2.3rem; */
+  font-size: 1.5rem;
+  font-weight: 800;
+}
+/* Responsive media query code for small screens */
+@media (max-width: 768px) {
+  .wwScoreNumber{
+      font-size: 11px !important;
+  }
+  .wwScore{
+    padding: 5px !important;
+        width: 65px !important;
+        height: 65px !important;
+        margin-bottom: 10px !important;
+        font-size: 10px !important;
+  }
+  .wwScoreText
+  {
+    margin: 1px !important;
+    width: 53px !important;
+    height: 53px !important;
+    padding: 0px !important;
+    padding-top: 12px !important;
+    font-size: 7px;
+    color: white;
+  }
+  .wwScoreContainer1
+  {
+    margin: 5px !important;
+  }
+  .badgeContainer {
+    margin-top: 20px !important;
+  }
+  .card-wrapper .swiper-slide-button {
+    display: none;
+  }
+  .card-list .card-item .card-link {
+    height: 300px !important;
+  }
+  .card-image {
+    width: 100%;
+    border-radius: 10px;
+    object-fit: cover;
+    min-height:300px !important;
+  }
+
+  .progress-wrapper{
+    width:30% !important;
+    margin-right: 0 !important;
+    padding-left: 3% !important;
+  }
+  .progress-container {
+    justify-content: center !important;
+    gap: 10px !important;
+    margin-top:50px !important;
+  }
+  .progress-circle {
+    width: 78px !important;
+    height: 78px !important;
+    font-size: 1rem !important;
+    margin: 0 auto !important;
+  }
+  .progress-circle::before {
+    width: 60px !important;
+    height: 60px !important;
+  }
+  .progress-text {
+    font-size: 1.2rem !important;
+  }
+  .progress-description {
+    font-size: 10px !important;
+    font-weight: 600;
+    margin-top: 8px;
+    color: #00b0f0;
+    width:100% !important;
+  }
+  .span-progress-text{
+    font-size: 0.8rem;
+    /* margin-left: 2rem; */
+  }
+}
+
+.downloadIcon
+{
+  height: 20px;
+  margin-top: -2px;
+}
+
+.progress-circle {
+  width: 135px;
+  height: 135px;
+  position: relative;
+  border-radius: 50%;
+  background: conic-gradient(
+    #00b0f0 0deg,
+    #00b0f0 var(--progress),
+    white var(--progress) 360deg
+  );
+  /* background: conic-gradient(#0077c0 var(--progress, 0%), transparent 0%),
+  linear-gradient(to bottom right, #6AD9D8, #0474C0) ; */
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.progress-circle::before {
+  content: "";
+  position: absolute;
+  width: 110px;
+  height: 110px;
+  /* background: white; */
+  border-radius: 50%;
+  background-image: var(--bg-img);
+  /* background-image: url("https://fivetoflow--partmar24.sandbox.my.site.com/f2fapp/webruntime/org-asset/879301397b/resource/081VD0000009phd/Images/homepageslideshowimages/slideshow2.avif");  */
+         background-size: cover;
+       
+        background-attachment: fixed;
+        background-repeat: no-repeat;
+    background-position: 0 0;     
+    background-size: 1200px 800px;
+     z-index: 0;
+    /* background: rgba(255, 255, 255, 0.3); */
+       
+        /* z-index: -1; */
+}
+
+.progress-wrapper {
+  height: 100px;
+  margin-bottom: 2rem;
+  margin-right: 1rem;
+}
+
+
+.progress-text {
+  position: absolute;
+  font-size: 1.5rem;
+  font-weight: 800;
+  /* color: black; */
+  color: white;
+  text-anchor: middle;
+}
+
+.progress-square {
+  width: 135px;
+  height: 135px;
+  position: relative;
+  background: conic-gradient(
+    var(--completedColor) 0deg,
+    var(--completedColor) var(--progress),
+    var(--remainingColor) var(--progress) 360deg
+  );
+  display: flex;
+  align-items: center;
+  justify-content: center;
+}
+
+.downloadText
+{
+  color: White !important;
+}
+
+
+.progressPeople
+{
+  --remainingColor: #002060;
+  /* --completedColor: #00206054; */
+  --completedColor: white;
+  
+}
+
+.progressCulture
+{
+  --remainingColor: #0070c0;
+  /* --completedColor: #0070c040; */
+  --completedColor: white;
+  
+}
+
+.progressProcess
+{
+  --remainingColor: #00b0f0;
+  /* --completedColor: #00b0f061; */
+  --completedColor: white;
+ 
+}
+
+.progressTechnology
+{
+  --remainingColor: #35b9c7;
+  --completedColor: #35b9c752;
+  --completedColor: white;
+}
+
+.progressAnalytics
+{
+  --remainingColor: #6dd7d9;
+  /* --completedColor: #6dd7d978; */
+  --completedColor: white;
+}
+
+.progressDownload
+{
+  --remainingColor: grey;
+  /* --completedColor: #2183d757; */
+  --completedColor: white;
+}
+
+.progress-10 {
+  --progress: 10%;
+}
+.progress-x20 {
+  --progress: 20%;
+}
+.progress-30 {
+  --progress: 30%;
+}
+.progress-40 {
+  --progress: 40%;
+}
+.progress-50 {
+  --progress: 50%;
+}
+.progress-60 {
+  --progress: 60%;
+}
+.progress-80 {
+  --progress: 80%;
+}
+.progress-70 {
+  --progress: 70%;
+}
+.progress-90 {
+  --progress: 90%;
+}
+.progress-100 {
+  --progress: 100%;
+}
+
+.progress-container {
+  display: flex;
+  justify-content: space-around;
+  width: 90%;
+  margin: 2rem auto;
+  padding: 1rem;
+  box-sizing: border-box;
+  margin-top:120px;
+}
+
+.progress-description{
+  font-size: 15px;
+  font-weight: 600;
+  margin-top: 15px;
+  color: white;
+  text-align: center;
+}
+
+.swiper-button-prev,
+.swiper-button-next {
+  /* color: #5372F0; */
+  /* color: #0070c0; */
+  color: white;
+  font-weight: 800;
+  position: absolute;
+  top: 50%;
+  width: 30px;
+  height: 30px;
+  margin-top: -15px;
+  z-index: 10;
+  cursor: pointer;
+}
+
+.swiper-button-prev {
+  left: 10px;
+}
+
+.swiper-button-next {
+  right: 10px;
+}
+
+
+.custom-swiper .swiper-pagination {
+  position: absolute !important;
+  bottom: 22px !important;
+  left: 0 !important;
+  right: 0 !important;
+  text-align: center !important;
+  z-index: 10 !important;
+}
+
+.custom-swiper .swiper-pagination-bullet  {
+  width: 14px !important;
+  height: 14px !important;
+  background-color: #cccccc !important;
+  border-radius: 50% !important;
+  display: inline-block !important;
+  margin: 0 6px !important;
+  opacity: 0.5 !important;
+  transition: transform 0.3s, opacity 0.3s, background-color 0.3s !important;
+  background: none !important;
+}
+*{
+  --swiper-pagination-bullet-width: 14px !important;
+  --swiper-pagination-bullet-height: 14px !important;
+  --swiper-pagination-bullet-inactive-color: #cccccc !important;
+  --swiper-pagination-color: #dddddd !important; /* Dot color */
+  --swiper-pagination-bottom: 22px !important;
+  --swiper-pagination-bullet-inactive-opacity: 0.6;
+}
+
+.custom-swiper .swiper-pagination-bullet-active {
+  opacity: 1 !important;
+  background-color: #dddddd !important; /* Active dot color */
+  transform: scale(1.4) !important;
+}
+@media (max-width:400px){
+  .progress-description{
+    font-size:9px !important;
+  }
+  .span-progress-text{
+    /* margin-left: 1.3rem; */
+  }
+}
+@media(max-width:400px){
+  .progress-container{
+    padding: 1.5rem;
+    gap:30px !important;
+  }
+  .progress-text{
+    font-size: 1rem !important;
+  }
+  .progress-description{
+    font-size: 14px !important;
+    font-weight: 800;
+  }
+
+}

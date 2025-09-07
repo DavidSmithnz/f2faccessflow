@@ -1,0 +1,139 @@
+.logo
+  {
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  .cardImage
+  {
+      height: 50px;
+      width: 50px;
+      margin-right: 10px;
+      margin-top: -20px;
+  }
+
+  .loader {
+    border: 16px solid #f3f3f3; /* Light grey */
+    border-top: 16px solid #3498db; /* Blue */
+    border-radius: 50%;
+    width: 60px;
+    height: 60px;
+    animation: spin 2s linear infinite;
+    margin: 0 auto;
+  }
+  
+  @keyframes spin {
+    0% { transform: rotate(0deg); }
+    100% { transform: rotate(360deg); }
+  }
+  
+  .coachHeading
+  {
+    color: white;
+    font-weight: 800;
+    font-size: 120%;
+    margin-left: -10px;
+    margin-right: -10px;
+    text-align: left;
+    padding: 10px;
+    margin-top:-10px;
+  }
+  
+  .container
+  {
+    text-align: justify;
+    font-size: 1.1rem;
+    color: grey;
+    border-radius: 10px;
+    padding: 10px;
+    background-color: white;
+    box-shadow: 0px 0 8px rgb(138 190 225);
+    overflow: hidden;
+    min-height: 100px;
+    margin-top: 20px;
+    margin-bottom: 1.3rem;
+    /* background-image: linear-gradient(to bottom right, #6AD9D8, #0474C0); */
+    background-image:linear-gradient(to bottom right, #0077c0, #4db3f2);
+  }
+  
+  .coachQuestion
+  {
+    color: white;
+    padding: 10px;
+    padding-left: 1px;
+  }
+  
+  .coachAnswerTextBox
+  {
+    width: 100%;
+    height: 80px;
+    margin-bottom: 10px;
+    border-radius: 8px;
+  }
+  
+  .coachFollowUpButton
+  {
+    float:right;
+  }
+  
+  .coachFollowUpButton button
+  {
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #0077c0;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 800;
+        border: 0;
+        width: 100px;
+  }
+  .coachAnswerSubmitButton
+  {
+    text-align: right;
+  }
+  
+  .coachAnswerSubmitButton button
+  { 
+        width:100px;
+        border-radius: 8px;
+        padding: 10px;
+        background-color: #0077c0;
+        color: #fff;
+        font-size: 0.8rem;
+        font-weight: 800;
+        border: 0;
+    
+  }
+  
+  @media(max-width: 768px) {
+    .coachFollowUpButton{
+      display: flex;
+      float: none;
+    }
+    
+    .coachFollowUpButton button
+  {
+        width:100%;
+  }
+    .coachAnswerSubmitButton button
+  { 
+        width:100%;  
+  }
+  .container{
+    font-size: 0.9rem;
+  }
+ 
+  .cardImage
+  {
+    height: 30px !important;
+    width: 30px !important;
+    margin-right: 10px !important;
+    margin-top: -40px !important;
+    position: absolute !important;
+    right: 0 !important;
+  }
+
+}

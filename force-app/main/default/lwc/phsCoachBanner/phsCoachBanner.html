@@ -1,0 +1,27 @@
+<template>
+    <template if:true={checkInRequired}>
+        <a href="coach">
+            <div class="card">          
+                <div class="tipContainer">
+                    <div class="cardMessage">
+                        <img class='cardImage' src={bellIcon} />  
+                        <div class='coachMessage'>{firstName}<span>,</span>&nbsp;{coachMessage}</div>
+                    </div>
+                </div>
+            </div>
+        </a>
+    </template>
+
+    <template if:true={showPopup}>
+      <section class="popup">
+        <div class="popup-header">Hey {firstName}! 👋</div>
+        <div class="popup-text">
+          {popupText}         
+        </div>
+        <div class="popup-actions">
+          <a href={checkinUrl} class="popup-button">Complete Now</a>
+          <button class="popup-close" onclick={handleDismiss}>Dismiss</button>
+        </div>
+      </section>
+    </template>
+  </template>

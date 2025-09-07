@@ -1,0 +1,82 @@
+/* #1e90ff */
+* {
+    padding: 0;
+    margin: 0;
+    font-family: "Avenir", "Avenir Next", sans-serif;
+  }
+  .spacer {
+    height: 4rem;
+  }
+  .container {
+    width: 90%;
+    margin: 2rem auto;
+    align-items: center;
+  }
+  label {
+    font-size: 1.1rem;
+    font-weight: 800;
+    color: #4a4747;
+  }
+  .head {
+    color: #1e90ff;
+    font-size: 2rem;
+    font-weight: 800;
+    text-align: left;
+    margin-bottom: 2rem;
+  }
+  input {
+    border: 1px solid black;
+    padding: 0.5rem;
+    width: 100%;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .btn button {
+    width: 120px;
+    border: 1px solid black;
+    padding: 0.5rem;
+    border-radius: 10px;
+    margin-bottom: 1.5rem;
+  }
+  .plus {
+    display: flex;
+  }
+  .btn-plus {
+    width: 40px;
+    margin-left: 0.5rem;
+    background-color: #4a4747;
+    color: white;
+    font-size: 1.5rem;
+  }
+  .div5 {
+    display: flex;
+    justify-content: right;
+    gap: 1rem;
+  }
+  .div5 button {
+    width: 100px;
+    padding: 0.5rem;
+    color: white;
+    background-color: #1e90ff;
+    border-radius: 10px;
+  }
+  .img {
+    margin-top: 1rem;
+  }
+  .img img {
+    width: 100%;
+    border-radius: 10px;
+  }
+  @media screen and (max-width: 768px) {
+    .container {
+      width: 90%;
+    }
+  }
+  @media screen and (max-width: 600px) {
+    .container {
+      width: 80%;
+    }
+    .btn button {
+      width: 110px;
+    }
+  }

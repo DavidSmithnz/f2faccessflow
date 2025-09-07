@@ -1,0 +1,12 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>Desktop_Image__c</fullName>
+    <description>This image will be one of the backgrounds of Desktop slideshow depending on sequence in homepage</description>
+    <externalId>false</externalId>
+    <inlineHelpText>This image will be one of the backgrounds of Desktop slideshow depending on sequence in homepage</inlineHelpText>
+    <label>Desktop Image</label>
+    <length>32768</length>
+    <trackTrending>false</trackTrending>
+    <type>Html</type>
+    <visibleLines>25</visibleLines>
+</CustomField>

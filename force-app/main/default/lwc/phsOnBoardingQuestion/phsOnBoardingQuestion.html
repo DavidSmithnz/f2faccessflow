@@ -1,0 +1,78 @@
+<template>
+  <nav>
+      <div class="logo">
+        <img src={f2flogo} alt="" />
+      </div>
+    </nav>
+    <div class="table-container">
+      <div class="outer-div">
+        <table class="parent-table">
+          <tbody>
+           <template for:each={onBoardingQuestionList} for:item="onBoarding">
+          <tr key={onBoarding.Id}>
+            <td > <span class="td-head">{onBoarding.Category} :</span> {onBoarding.Question}<span class="asterik">*</span>
+            <div>
+
+          <table class="child-table">
+          <tbody>
+           <!-- <template for:each={onBoarding.Options} for:item="options">
+            <tr key={options.Id}>
+              <td class="input-td">
+               <span if:false={onBoarding.IsMultiChoice}><input type="radio" data-id={options.Id} id={options.Id} name={onBoarding.Id} value={options.Option} onchange={handle_selectionchanged} /> </span> 
+               <span if:true={onBoarding.IsMultiChoice}><input type="checkbox" data-id={options.Id} id={options.Id} value={options.Option} onchange={handle_selectionchanged}  /> </span> 
+               
+              </td>
+              <td>{options.Option}</td>
+            </tr>
+          </template> -->
+          <template for:each={onBoarding.Options} for:item="options">
+            <tr key={options.Id}>
+              <td class="input-td">
+                <template if:false={onBoarding.IsMultiChoice}>
+                  <label for={options.Id}>
+                    <input 
+                      type="radio" 
+                      data-id={options.Id} 
+                      id={options.Id} 
+                      name={onBoarding.Id} 
+                      value={options.Option} 
+                      onchange={handle_selectionchanged} 
+                    />
+                    {options.Option}
+                  </label>
+                </template>
+          
+                <template if:true={onBoarding.IsMultiChoice}>
+                  <label for={options.Id}>
+                    <input 
+                      type="checkbox" 
+                      data-id={options.Id} 
+                      id={options.Id} 
+                      value={options.Option} 
+                      onchange={handle_selectionchanged} 
+                    />
+                    {options.Option}
+                  </label>
+                </template>
+              </td>
+            </tr>
+          </template>
+          
+          </tbody>  
+          </table>
+              
+            </div>
+            </td>
+            
+          
+        	</tr>
+          
+          </template>
+          </tbody>
+        </table>
+      </div>
+ <button style="margin-bottom: 20px;" onclick={handle_submit}>Submit</button>
+ <br/>
+    </div>
+
+</template>

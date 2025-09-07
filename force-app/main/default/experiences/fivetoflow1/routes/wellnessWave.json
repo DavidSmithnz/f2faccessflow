@@ -1,0 +1,12 @@
+{
+  "activeViewId" : "fbbfae06-041b-46fe-9ae1-518aa1deb4c2",
+  "appPageId" : "a24ffc6e-f088-4e60-890c-e142ee4cfb89",
+  "configurationTags" : [ ],
+  "devName" : "survey__c",
+  "id" : "cf775adc-df8c-4894-93d3-bdb38b596054",
+  "label" : "Wellness Wave",
+  "pageAccess" : "UseParent",
+  "routeType" : "custom-survey",
+  "type" : "route",
+  "urlPrefix" : "survey"
+}

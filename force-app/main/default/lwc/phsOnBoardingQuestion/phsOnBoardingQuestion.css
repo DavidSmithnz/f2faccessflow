@@ -1,0 +1,64 @@
+* {
+  padding: 0;
+  margin: 0;
+  font-family: "Avenir Next", "Avenir Next Bold", "Avenir", sans-serif;
+}
+.table-container {
+  width: 90%;
+  margin: auto;
+  margin-top: 2rem;
+}
+.outer-div {
+  border: 0.5px solid #002060;
+  border-radius: 8px;
+  padding: 10px;
+  margin-bottom: 1.2rem;
+}
+
+.child-table {
+  margin-top: 8px;
+}
+.input-td {
+  width: 30px;
+  color:#00B0F0;
+}
+td {
+  padding: 6px;
+  font-weight: 500;
+  color:#0070c0;
+}
+.asterik {
+  color: red;
+}
+.td-head {
+  font-weight: 700;
+  color:#002060;
+}
+button {
+  width: 120px;
+  background-color: #0070c0;
+  margin-top: 5px;
+  color: white;
+  font-weight: 500;
+  border-radius: 8px;
+  padding: 5px;
+  border-color: #0070c0;
+}
+/* .child-table td {
+  padding: 10px;
+} */
+.logo {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.logo img {
+  width: 200px;
+}
+label{
+  cursor: pointer;
+}
+input[type="radio"],
+input[type="checkbox"]{
+  margin-right: 10px;
+}

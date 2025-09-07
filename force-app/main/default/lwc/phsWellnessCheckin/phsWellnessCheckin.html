@@ -1,0 +1,87 @@
+<template>
+    <div class="survey-container" if:false={isAllAmswered}>
+    
+        <div if:true={qobj} class={categorycss} >
+         
+            <div if:false={isAllAmswered} class="arrow arrow-left" style="display: none;">
+                <img src={leftArrowImage} alt="Left Arrow" style="color: white;" onclick={handleleftArrowImage} />
+              </div>
+                 <div if:false={isAllAmswered} class="survey-content">
+            <div class="survey-slider" style="display: none;">
+              <input type="range" id="numberSlider" min="1" max={qcount} value={slidervalue} />
+            </div>            
+            <div class="questions-list">
+              <p class="questionLabel">
+                Question {qobj.rowNo} / {qcount}: {qobj.Question} 
+              </p>
+              <div class="question-btn" >
+                <button class={cssbtn_StronglyDisagree} onclick={handle_StronglyDisagree}>
+                  Strongly Disagree
+                </button>
+                <button class={cssbtn_Disagree} onclick={handle_Disagree}>Disagree</button>
+                <button class={cssbtn_Neutral} onclick={handle_Neutral}>Neutral</button>
+                <button class={cssbtn_Agree} onclick={handle_Agree}>Agree</button>
+                <button class={cssbtn_StronglyAgree} onclick={handle_StronglyAgree}>
+                  Strongly Agree
+                </button>
+              </div>
+            </div>
+          </div>
+  
+          <div if:false={isAllAmswered}  class="pagination">
+            <span class={cssCircle1} onclick={handle_circle1}></span>
+            <span class={cssCircle2} onclick={handle_circle2}></span>
+            <span class={cssCircle3} onclick={handle_circle3}></span>
+       
+          </div>
+          <div if:false={isAllAmswered} class="arrow arrow-right" style="display: none;">
+            <img src={rightArrowImage} alt="Right Arrow" style="color: white;" onclick={handlerightArrowImage} />
+          </div>
+        </div>
+      
+          <!-- <div
+            class="heading-checkbox"
+            style="display: flex; align-items: center; gap: 8px"
+          >
+            <h3 style="margin: 0">Wellness Wave</h3>
+            <span><input type="checkbox" /></span>
+          </div> -->
+          <!-- <div class="heading-checkbox">
+            <div class="wellness-head">
+              <p style="color: White; font-weight: bold; padding-left: 15px; font-size: 19.2px; margin-top: 10px; padding-bottom: 10px;" >Wellness Wave Weekly Insights       
+              </p>
+            </div>
+            <div if:true={isAllAmswered} style="font-size: 17.6px;" class="wellness-desc"> 
+             <span>:</span>  <p> Thank you for completing Wellness Wave Weekly Insights 3 questions, see you next week!</p>
+             </div>
+          </div> -->
+          
+            <!-- <div class="card">
+        <div class="title">Wellness Wave Weekly Insights</div>
+        <div class="tipContainer">
+            <div if:true={isAllAmswered} class="cardMessage">
+                  <p> Thank you for completing Wellness Wave Weekly Insights 3 questions, see you next week!</p>
+            </div>
+            
+        </div>
+    </div> -->
+ 
+ 
+ 
+  </div>
+   <div if:true={isAllAmswered} class="cardMessage">
+    <div class="card">
+      <div class="title">Wellness Wave Weekly Insights</div>
+      <div class="tipContainer">
+         
+                <p> Thank you for completing Wellness Wave Weekly Insights 3 questions, see you next week!</p>  
+      </div>
+  </div>
+
+
+          
+       
+      </div>
+      
+  
+</template>

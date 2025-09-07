@@ -1,0 +1,30 @@
+{
+  "forgotPasswordRouteId" : "560539c2-3bc3-4499-aa66-fa1ee2142b9a",
+  "isAvailableToGuests" : true,
+  "isFilteredComponentsView" : false,
+  "isProgressiveRenderingEnabled" : false,
+  "loginAppPageId" : "7e0288f5-7e81-4bcd-9220-0d908f26439c",
+  "mainAppPageId" : "a24ffc6e-f088-4e60-890c-e142ee4cfb89",
+  "preferredDomain" : "none",
+  "selfRegistrationRouteId" : "3838c895-b003-42a8-a9ce-d8dac554027a",
+  "trustedSitesForScript" : [ {
+    "id" : "dc1d46ba-6854-4bd0-8158-17e2d071ff15",
+    "isActive" : true,
+    "trustedSiteName" : "static.hotjar.com",
+    "trustedSiteUrl" : "https://static.hotjar.com/c/hotjar-2020616.js",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "fd6bb652-1316-4c9a-b92d-2d9245f42bc1",
+    "isActive" : true,
+    "trustedSiteName" : "cdn.heapanalytics.com",
+    "trustedSiteUrl" : "https://cdn.heapanalytics.com/js/heap-YOUR_APP_ID.js",
+    "type" : "trustedSitesForScripts"
+  }, {
+    "id" : "a5881e3f-1523-4c67-94a3-2a3bd881ec75",
+    "isActive" : true,
+    "trustedSiteName" : "cdn.heapanalytics.com1",
+    "trustedSiteUrl" : "https://cdn.heapanalytics.com/js/heap-2904849685.js",
+    "type" : "trustedSitesForScripts"
+  } ],
+  "type" : "site"
+}

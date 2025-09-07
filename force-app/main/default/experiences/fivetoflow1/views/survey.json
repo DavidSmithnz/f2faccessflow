@@ -1,0 +1,80 @@
+{
+  "appPageId" : "a24ffc6e-f088-4e60-890c-e142ee4cfb89",
+  "componentName" : "siteforce:dynamicLayout",
+  "dataProviders" : [ ],
+  "id" : "fbbfae06-041b-46fe-9ae1-518aa1deb4c2",
+  "label" : "survey",
+  "regions" : [ {
+    "components" : [ {
+      "componentAttributes" : {
+        "background" : "background: rgba(0,0,0,0)",
+        "backgroundOverlay" : "rgba(0,0,0,0.5)",
+        "contentAreaWidth" : 100,
+        "sectionConfig" : {
+          "UUID" : "8f7355d6-df48-4b9f-abae-10f31c31a2d5",
+          "columns" : [ {
+            "UUID" : "8dbb9b4d-21c7-4d31-ac46-6560dd7b3970",
+            "columnKey" : "1",
+            "columnName" : "Column 1",
+            "columnWidth" : "12",
+            "seedComponents" : [ ]
+          } ]
+        },
+        "sectionHeight" : 300
+      },
+      "componentName" : "forceCommunity:section",
+      "id" : "8f7355d6-df48-4b9f-abae-10f31c31a2d5",
+      "regions" : [ {
+        "components" : [ {
+          "componentAttributes" : {
+            "richTextValue" : "<img src=\"https://fivetoflow.file.force.com/servlet/servlet.ImageServer?id=0154W00000BoELy&oid=00D4W000000Faqm&lastMod=1618398774000\" width=20%> </img>"
+          },
+          "componentName" : "forceCommunity:htmlBlock",
+          "id" : "c8a1bffd-ff45-4200-92a7-673946c7f35d",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        }, {
+          "componentAttributes" : {
+            "flowArguments" : "[{\"label\":\"campaign\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!campaign}\"},{\"label\":\"SurveyId\",\"dataType\":\"String\",\"supportsRecordId\":false,\"value\":\"{!Survey}\"}]",
+            "flowName" : "SurveyCommunityFlow"
+          },
+          "componentName" : "forceCommunity:flowCommunity",
+          "id" : "33f78f63-9802-4d66-b8a3-6139d12d5705",
+          "renderPriority" : "NEUTRAL",
+          "renditionMap" : { },
+          "type" : "component"
+        } ],
+        "id" : "8dbb9b4d-21c7-4d31-ac46-6560dd7b3970",
+        "regionLabel" : "Column 1",
+        "regionName" : "1",
+        "renditionMap" : { },
+        "type" : "region"
+      } ],
+      "renderPriority" : "NEUTRAL",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "14387430-159f-443e-b1b7-3d2064b481f7",
+    "regionName" : "content",
+    "type" : "region"
+  }, {
+    "components" : [ {
+      "componentAttributes" : {
+        "customHeadTags" : "",
+        "description" : "The Wellness Wave is an integrative organizational wellness diagnostic that gathers data on how people truly feel about themselves, their peers and the companies they serve.",
+        "title" : "Wellness Wave"
+      },
+      "componentName" : "forceCommunity:seoAssistant",
+      "id" : "925abc55-2c68-4db6-bd09-272f33236b65",
+      "renditionMap" : { },
+      "type" : "component"
+    } ],
+    "id" : "fdd5df6b-7cae-4398-9adf-5b7d65b54aef",
+    "regionName" : "sfdcHiddenRegion",
+    "type" : "region"
+  } ],
+  "themeLayoutType" : "Inner",
+  "type" : "view",
+  "viewType" : "custom-survey"
+}

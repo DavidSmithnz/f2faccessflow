@@ -1,0 +1,272 @@
+* {
+  margin: 0;
+  padding: 0;
+  font-family: 'Avenir';
+}
+.container {
+  display: flex;
+  flex-direction: column;
+  height: 100vh;
+  background: linear-gradient(to bottom, #002060 0%, #0070C0 20%, #00B0F0 40%, #35B9C7 100%);
+  /* background: linear-gradient(to bottom, #002060, #0070C0, #00B070, #35B9C7, #6DDCD9, #9DC3E6); */
+}
+.image-container {
+  /* flex: 1; */
+  /* background: url("https://assets.api.uizard.io/api/cdn/stream/1235bef8-6e99-469a-bf18-8016e7bb1b4a.jpg")
+    center/cover no-repeat; */
+  width: 100%;
+  max-width: 900px;
+  margin: 0 auto;
+  height: 50%;
+  aspect-ratio: 4 / 3;
+}
+.hide {
+  display: none;
+}
+
+.form-container {
+  flex: 1;
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  padding: 20px;
+}
+form {
+  display: none;
+  width: 100%;
+  background-color: white;
+  padding: 30px;
+  border-radius: 8px;
+  box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+input {
+  width: 100%;
+  padding: 12px;
+  margin: 8px 0;
+  border-radius: 4px;
+  border: 1px solid #ccc;
+}
+.email-btn {
+  width: 100%;
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+}
+.email-btn button {
+  width: 100%;
+  background-color: #0070C0;
+  color: white;
+  padding: 1rem;
+  font-size: 1.3rem;
+  font-weight: 700;
+  border-radius: 25px;
+  margin-bottom: 1rem;
+  border: none;
+}
+.email-btn btn1{
+  background-color: white;
+  color:#002060
+}
+.email-btn btn2{
+  background-color: #002060;
+  color: white;
+}
+.btn {
+  display: flex;
+  justify-content: center;
+  margin-top: 1rem;
+}
+.cs-text{
+  font-size: 10px;
+}
+.small-screen-div {
+  display: flex;
+  justify-content: space-between;
+  flex-direction: column;
+  /* border: 1px solid black; */
+  width: 100%;
+}
+
+.desc-head {
+  display: flex;
+  justify-content: center;
+}
+.desc-head h1 {
+  margin-bottom: 3rem;
+  font-size: 4rem;
+  font-weight: 800;
+  padding: 1rem;
+  color: white;
+  /* color: #00b0f0; */
+  /* color: white; */
+  
+}
+.desc-head h1 {
+  text-align: left;
+}
+.btn button {
+  width: 120px;
+  padding: 12px;
+  /* border: 1px solid black; */
+  background-color: #007bff;
+  color: white;
+  border-radius: 4px;
+}
+.email-btn .btn1{
+  background-color: white;
+  color: #002060;
+}
+.email-btn .btn2{
+  background-color: #002060;
+  color: white;
+}
+.logoImage{
+  width:450px
+}
+
+/* .logoImage{
+  height: 45px;  
+} */
+.logoContainer
+{
+  /* left: 0; */
+  margin: 10px;  
+  position: absolute;  
+  top:10px;
+}
+
+.terms
+{
+  position: absolute;
+  font-size: 20px;
+  /* color: black; */
+  /* color:#00B0F0; */
+  color:white;
+  font-weight: 600;
+  margin: 10px;
+  text-align: center;
+  /* margin-top: 7rem; */
+  bottom: 20px;
+}
+
+@media (min-width: 1028px) {
+  .logoContainer
+{
+  margin-top:50px !important;
+  left: auto !important;
+}
+
+/* .logoImage
+{
+  height: 75px !important;  
+}
+   */
+  .container {
+    flex-direction: row;
+  }
+  .image-container,
+  .form-container {
+    width: 50%;
+  }
+  .image-container {
+    order: 2;
+    height: 100%;
+    width: 50vw;
+  }
+  .form-container {
+    order: 1;
+    height: 100%;
+  }
+}
+@media (max-width:768px){
+  .container{
+    background: linear-gradient(to bottom, #002060 0%, #0070C0 20%, #00B0F0 40%, #35B9C7 100%);
+  }
+  .image-container{
+    display: none;
+  }
+  .terms{
+    width: 100%;
+    position: absolute;
+    /* color: black; */
+    color:white;
+    font-weight: 800;
+    font-size: 14px;
+    /* margin-top: 7rem; */
+    bottom: 43px;
+  }
+  .terms p{
+   width: 100%;
+   text-align: center;
+  }
+  .email-btn{
+    display: flex;
+    justify-content: center;
+    width: 100%;
+    align-items: center;
+    gap: 0.5rem;                  
+    width: fit-content;           
+    margin: 1rem auto;            
+    flex-wrap: wrap;   
+  }
+  .email-btn button{
+    width: 250px;
+    font-size: 1.2rem;
+  }
+  .desc-head h1{
+    font-size: 2.8rem;
+    color: white;
+    width: 100%;
+    text-align: center;
+  }
+  /* .email-btn button:nth-child(1){
+    background-color: white;
+    color: #002060;
+  }
+  .email-btn button:nth-child(2){
+    background-color: #002060;
+    color: white;
+  } */
+  .email-btn .btn1{
+    background-color: white;
+    color: #002060;
+  }
+  .email-btn .btn2{
+    background-color: #002060;
+    color: white;
+  }
+}
+@media(max-width:400px){
+  .logoContainer{
+    top:35px;
+  }
+  .logoImage{
+    width: 300px;
+  }
+  .terms{
+    bottom: 65px;
+  }
+}
+@media screen and (min-width:400px) and (max-width:768px){
+  .logoContainer{
+    top:35px;
+  }
+  .logoImage{
+    width: 300px;
+  }
+  .terms{
+    bottom: 65px;
+    font-size: 15px;
+  }
+
+}
+@media screen and (min-width:768px) and (max-width:1028px){
+  .logoContainer{
+    top:10px
+  }
+.logoImage{
+  width: 400px;
+}
+
+}

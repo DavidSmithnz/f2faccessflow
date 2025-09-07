@@ -1,0 +1,36 @@
+<template>
+      <div if:false={isSurveySiteShow} >
+     <div if:false={isSurveyTaken} class="wellness-tip">
+                <div class="card">
+                <div class="title">Diagnostics Status </div>
+                <div class="tipContainer">
+                    <div class="cardMessage">
+                      <!-- Looks like you haven’t taken the Wellness Wave <sup class="large-sup">&#174;</sup>!  -->
+                      <span class="brand-text">
+                        Looks like you haven’t taken the Wellness Wave
+                        <span class="r-circle">&#174;</span>
+                        !
+                      </span>
+                       <!-- <p onclick={handleSurveyPage}  style="text-decoration: underline;">
+                        Please click here to assess your readiness for future change.</p> -->
+                        <p onclick={handleSurveyPage}  style="text-decoration: underline; cursor:pointer">
+                          Click here to get started.</p>    
+                    </div>
+                </div>
+            </div>
+            </div>
+        </div>
+    <c-phs-coach-banner if:false={isSurveySiteShow}></c-phs-coach-banner>
+    <c-phs-home-slideshow if:false={isSurveySiteShow}></c-phs-home-slideshow>   
+    <c-phs-custom-home-tip if:false={isSurveySiteShow}></c-phs-custom-home-tip>
+    <c-phs-wellness-checkin if:false={isSurveySiteShow}></c-phs-wellness-checkin>
+    <!-- <c-phs-custom-home-tip></c-phs-custom-home-tip> -->
+    <c-phs-home-q-a-tiles if:false={isSurveySiteShow}></c-phs-home-q-a-tiles> 
+
+
+    <div if:true={isSurveySiteShow} class="survey-site-page">
+      <button onclick={handleSurveyPageBack}>Back</button>
+      <br/>
+      <iframe src="https://app.fivetoflow.com/WellnessWave" height="850"  width="100%" style="border: none;"></iframe>
+    </div>
+</template>

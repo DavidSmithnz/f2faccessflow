@@ -1,0 +1,158 @@
+* {
+    box-sizing: border-box;
+  }
+  
+  .card{
+    margin-bottom: 1.3rem;
+  }
+  
+  .logo
+  {
+    height: 50px;
+    margin-bottom: 20px;
+    margin-left: auto;
+    margin-right: auto;
+    display: block;
+  }
+  
+  /* Float four columns side by side */
+  .column {
+    float: left;
+    width: 100%;
+    padding: 0 7px;
+    text-align: center;
+  }
+  
+  /* Remove extra left and right margins, due to padding */
+  .row {margin: 0 -5px;
+    margin-top: 20px;
+    margin-bottom:20px;
+  }
+  
+  /* Clear floats after the columns */
+  .row:after {
+    content: "";
+    display: table;
+    clear: both;
+  }
+  
+  /* Responsive columns 
+  @media screen and (max-width: 600px) {
+    .column {
+      width: 100%;
+      display: block;
+      margin-bottom: 20px;
+    }
+  }
+  */
+  
+  /* Style the counter cards */
+  .card {
+    box-shadow: 0 4px 8px 0 rgb(138 190 225);
+    text-align: center;
+    background-color: #0077c0;
+    border-radius: 12px;
+    padding-top: 10px;
+    padding-bottom: 10px;
+    border: 1px solid #0077c0;
+    /* margin-top: 20px; */
+    background-image: linear-gradient(to bottom right, #0077c0, #4db3f2);
+  }
+
+  
+  .cardImage
+  {
+      height: 50px;
+      width: 50px;
+      margin-right: 10px;
+      margin-top: -20px;
+  }
+  
+  .cardLabel
+  {
+    padding: 10px;
+    color: #0074bf;
+    font: caption;
+  }
+
+.title
+{
+    margin: 0 auto;
+    color: white;
+    font-size: 120%;
+    font-weight: bold;
+    text-align: left;
+    padding-left: 15px;
+}
+
+.cardMessage
+{
+  font-size: 1.1rem;
+  text-align: left;
+  color: white;
+  margin-top: 2px;
+  width: 100%;
+  padding: 5px;
+}
+
+.tipContainer
+{
+  margin-top: 7px;
+  display: flex;
+  flex-direction: row;
+  padding-left: 10px;
+    padding-right: 10px;
+    
+}
+
+@media (max-width: 768px) {
+  .cardMessage
+  {
+    padding-left: 10px !important;
+    padding-right: 10px !important;
+    text-align: justify !important;
+    font-size: 0.9rem;
+    /* color: #002060; */
+    color: white;
+  }
+  .cardImage
+  {
+    height: 30px !important;
+    width: 30px !important;
+    margin-right: 10px !important;
+    margin-top: -40px !important;
+    position: absolute !important;
+    right: 0 !important;
+  }
+
+  .card {
+    background: none;
+    border: none;
+    box-shadow: none;
+    background-image: linear-gradient(to bottom right, #0077c0, #4db3f2);
+  }
+  
+  .tipContainer {
+    /* background-image: linear-gradient(to bottom right, #0077c0, #4db3f2); */
+    /* background: #D3D3D3; */
+    border-radius: 12px;
+    
+    /* border: 1px solid #0077c0; */
+    /* padding: 10px; */
+    padding-left: 5px;
+  }
+  
+  .cardImage {
+    display: none;
+  }
+  .title{
+    /* color:#002060; */
+    color: white;
+  }
+
+}
+@media (max-width:400px){
+  .cardMessage{
+    font-size: 0.87rem;
+  }
+}
