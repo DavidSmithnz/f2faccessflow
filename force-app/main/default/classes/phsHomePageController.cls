@@ -24,7 +24,7 @@ public  class phsHomePageController {
         
         // Serializing the list of accounts to JSON
         
-		String jsonResponse = JSON.serialize(sd);
+        String jsonResponse = JSON.serialize(sd);
         return jsonResponse;
     }
     
@@ -54,7 +54,7 @@ public  class phsHomePageController {
             System.debug('An exception occurred: ' + e.getMessage());
         }
         
-        if(tip == '')
+        if(tip == '' || tip.contains('An error occurred'))
         {   
         //Commented is the logic to get tip from tip object
             phsTips__c[] tipList=[SELECT id, description__c FROM phsTips__c];

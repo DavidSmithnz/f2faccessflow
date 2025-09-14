@@ -3,30 +3,53 @@
 
     <!-- Apex Classes -->
     <types>
-        <members>phsBatchWellnessUserQuestionSync</members>
-        <members>phsChatBaseController</members>
-        <members>phsChatBaseHandler</members>
-        <members>phsCoachController</members>
-        <members>phsCommonGoal1</members>
-        <members>phsCourseController</members>
-        <members>phsCourseProgressController</members>
-        <members>phsGoalController</members>
-        <members>phsHeaderController</members>
-        <members>phsHomePageController</members>
-        <members>phsMyTeamsController</members>
-        <members>phsOnboardingController</members>
-        <members>phsProfileController</members>
-        <members>phsSharedGoalController</members>
-        <members>phsStrategyController</members>
-        <members>phsSurveyUserQuestionsController</members>
-        <members>phsSurveyWellnessQuestionSyncTest</members>
-        <members>phsUserGoalStrategyController</members>
-        <members>phsUserGoalsController</members>
-        <members>phsUserPerformanceController</members>
-        <members>phsUtilityController</members>
-        <members>phsWellnessWaveController</members>
-        <name>ApexClass</name>
-    </types>
+    <!-- Main Controllers -->
+    <members>phsBatchWellnessUserQuestionSync</members>
+    <members>phsChatBaseController</members>
+    <members>phsCoachController</members>
+    <members>phsCourseController</members>
+    <members>phsCourseProgressController</members>
+    <members>phsGoalController</members>
+    <members>phsHeaderController</members>
+    <members>phsHomePageController</members>
+    <members>phsMyTeamsController</members>
+    <members>phsOnboardingController</members>
+    <members>phsProfileController</members>
+    <members>phsSharedGoalController</members>
+    <members>phsStrategyController</members>
+    <members>phsSurveyUserQuestionsController</members>
+    <members>phsUserGoalStrategyController</members>
+    <members>phsUserGoalsController</members>
+    <members>phsUserPerformanceController</members>
+    <members>phsUtilityController</members>
+    <members>phsWellnessWaveController</members>
+    <members>phsBatchWellnessUserQSyncScheduler</members>
+
+    <!-- Test Classes -->
+    <members>phsGoalControllerTest</members>
+    <members>phsMyTeamsControllerTest</members>
+    <members>phsSharedGoalControllerTest</members>
+    <members>phsStrategyControllerTest</members>
+    <members>phsSurveyUserQuestionsControllerTest</members>
+    <members>phsUserGoalStrategyControllerTest</members>
+    <members>phsUserGoalsControllerTest</members>
+    <members>phsProfileControllerTest</members>
+    <members>phsWellnessWaveControllerTest</members>
+    <members>phsOnboardingControllerTest</members>
+    <members>phsBatchWellnessUserQuestionSyncTest</members>
+    <members>phsUserPerformanceControllerTest</members>
+    <members>phsChatBaseControllerTest</members>
+    <members>phsCoachControllerTest</members>
+    <members>phsCourseControllerTest</members>
+    <members>phsCourseProgressControllerTest</members>
+    <members>phsHeaderControllerTest</members>
+    <members>phsHomePageControllerTest</members>
+    <members>phsUtilityControllerTest</members>
+    <members>phsBatchWellnessUserQSyncSchedulerTest</members>
+
+    <name>ApexClass</name>
+</types>
+
 
     <!-- Lightning Web Components -->
     <types>
@@ -53,7 +76,6 @@
         <members>phsHomeQATiles</members>
         <members>phsHomeSlideshow</members>
         <members>phsMyGoals</members>
-        <members>phsMyProfile</members>
         <members>phsOnBoardingQuestion</members>
         <members>phsSessionInitializer</members>
         <members>phsWellnessCheckin</members>
@@ -96,7 +118,7 @@
 
     <!-- Custom Metadata Records -->
     <types>
-        <members>Chatbase_Config__mdt.*</members>
+        <members>Chatbase_Config__mdt.ChatbotId</members>
         <name>CustomMetadata</name>
     </types>
 

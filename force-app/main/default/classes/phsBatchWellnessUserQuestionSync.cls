@@ -2,6 +2,8 @@ global with sharing class phsBatchWellnessUserQuestionSync
     implements Database.Batchable<SObject>
 {
     global Database.QueryLocator start(Database.BatchableContext bc) {
+        System.debug('Batch Start: Preparing to query Contacts with App_Role__c != null');
+
         return Database.getQueryLocator([
             SELECT Id
             FROM Contact
@@ -10,35 +12,41 @@ global with sharing class phsBatchWellnessUserQuestionSync
     }
 
     global void execute(Database.BatchableContext bc, List<SObject> rawScope) {
-        if (rawScope.isEmpty()) return;
+        System.debug('Batch Execute: Scope size = ' + rawScope.size());
+
+        if (rawScope.isEmpty()) {
+            System.debug('No contacts in scope, returning early');
+            return;
+        }
 
         List<Contact> scope = (List<Contact>) rawScope;
         Set<Id> userIds = new Map<Id, Contact>(scope).keySet();
+        System.debug('Contacts in scope: ' + userIds);
 
-        // 1) Scoped cleanup: delete unanswered rows for these users only
+        // 1) Scoped cleanup
         List<phsUserSurveyQuestions__c> toDelete = [
             SELECT Id
             FROM phsUserSurveyQuestions__c
             WHERE User__c IN :userIds
               AND (UserAnswer__c = null OR UserAnswer__c = '')
         ];
+        System.debug('Deleting ' + toDelete.size() + ' unanswered survey questions');
         if (!toDelete.isEmpty()) {
             Database.delete(toDelete, /* allOrNone */ false);
         }
 
-        // 2) Deactivate answered rows & collect answered question Ids
+        // 2) Deactivate answered rows
         List<phsUserSurveyQuestions__c> answered = [
             SELECT Id, IsActive__c, SurveyQuestionId__c, User__c
             FROM phsUserSurveyQuestions__c
             WHERE User__c IN :userIds
               AND UserAnswer__c != null
         ];
+        System.debug('Found ' + answered.size() + ' answered survey questions');
 
         Map<Id, Set<Id>> userToAnsweredQIds = new Map<Id, Set<Id>>();
         for (phsUserSurveyQuestions__c a : answered) {
             a.IsActive__c = false;
-
-            // ---- FIX: no putIfAbsent in Apex ----
             if (!userToAnsweredQIds.containsKey(a.User__c)) {
                 userToAnsweredQIds.put(a.User__c, new Set<Id>());
             }
@@ -46,32 +54,38 @@ global with sharing class phsBatchWellnessUserQuestionSync
         }
         if (!answered.isEmpty()) {
             update answered;
+            System.debug('Updated ' + answered.size() + ' answered questions to inactive');
         }
 
-        // 3) Load all available Survey Questions once per execute
+        // 3) Load all Survey Questions
         List<Survey_Question__c> allQuestions = [
             SELECT Id, Question__c, Grouping__c, Category__c, Name
             FROM Survey_Question__c
         ];
+        System.debug('Loaded ' + allQuestions.size() + ' total survey questions');
+
         if (allQuestions.isEmpty()) return;
 
-        // 4) For each user in scope, pick up to 3 random new questions not yet answered
+        // 4) Assign new questions
         List<phsUserSurveyQuestions__c> toInsert = new List<phsUserSurveyQuestions__c>();
 
         for (Contact c : scope) {
             Set<Id> already = userToAnsweredQIds.get(c.Id);
-
             List<Survey_Question__c> candidates = new List<Survey_Question__c>();
+
             for (Survey_Question__c q : allQuestions) {
                 if (already == null || !already.contains(q.Id)) {
                     candidates.add(q);
                 }
             }
+            System.debug('Contact ' + c.Id + ' has ' + candidates.size() + ' candidate questions');
+
             if (candidates.isEmpty()) continue;
 
             Integer pickCount = Math.min(3, candidates.size());
+            System.debug('Picking ' + pickCount + ' new questions for contact ' + c.Id);
 
-            // Partial Fisher–Yates shuffle to get first N unique randoms
+            // Shuffle and select
             for (Integer i = 0; i < pickCount; i++) {
                 Integer remaining = candidates.size() - i;
                 Integer offset = Integer.valueOf(Math.floor(Math.random() * remaining));
@@ -90,117 +104,34 @@ global with sharing class phsBatchWellnessUserQuestionSync
                 qobj.Grouping__c = sq.Grouping__c;
                 qobj.Category__c = sq.Category__c;
                 qobj.IsActive__c = true;
-                // qobj.Name = sq.Name; // only if Name is a text field (not Auto-Number)
                 toInsert.add(qobj);
             }
         }
 
         if (!toInsert.isEmpty()) {
             insert toInsert;
+            System.debug('Inserted ' + toInsert.size() + ' new survey questions');
+        } else {
+            System.debug('No new survey questions to insert');
         }
     }
 
     global void finish(Database.BatchableContext bc) {
-        // Flip all phsCoachCheckIn__c where Checkin_required__c = false → true (once per batch)
+        System.debug('Batch Finish: Updating phsCoachCheckIn__c records');
+
         List<phsCoachCheckIn__c> toUpdate = [
             SELECT Id, Checkin_required__c
             FROM phsCoachCheckIn__c
             WHERE Checkin_required__c = false
         ];
+        System.debug('Found ' + toUpdate.size() + ' check-ins to flip back to required');
+
         if (!toUpdate.isEmpty()) {
             for (phsCoachCheckIn__c rec : toUpdate) {
                 rec.Checkin_required__c = true;
             }
             update toUpdate;
+            System.debug('Updated ' + toUpdate.size() + ' check-ins to required');
         }
     }
 }
-
-
-
-
-
-// global  class phsBatchWellnessUserQuestionSync implements Database.Batchable<sObject>
-// {
-// global Database.QueryLocator start(Database.BatchableContext BC)
-//     {
-//        // String query = 'SELECT Id,Name FROM Account';
-       
-//         return null;//Database.getQueryLocator(query);
-//     }
-//     global void execute(Database.BatchableContext BC, List<Account> scope)
-//     {
-//         List<phsUserSurveyQuestions__c> deletelist=new List<phsUserSurveyQuestions__c>();
-//         deletelist=[Select Id from phsUserSurveyQuestions__c where UserAnswer__c=:'' or UserAnswer__c=:null ];
-//         if(deletelist.size()>0)
-//         {
-//         delete deletelist;
-//         }
-//         List<Contact> userlist=new List<Contact>();
-//         userlist=[Select Id , App_Role__c from contact where App_Role__c !=: null];
-        
-//         for(Contact c : userlist)
-//         {
-//             String userId=c.Id;
-//             List<phsUserSurveyQuestions__c> answeredlist=new List<phsUserSurveyQuestions__c>();
-//             answeredlist=[Select Id, IsActive__c, SurveyQuestionId__c  from phsUserSurveyQuestions__c where User__c =:userId and UserAnswer__c!=null];
-            
-            
-            
-            
-//             Set<Id> qids=new Set<Id>();
-//             for(phsUserSurveyQuestions__c q : answeredlist)
-//             {
-//                 qids.add(q.SurveyQuestionId__c);
-//                 q.IsActive__c=false;
-//             }
-//             if(answeredlist.size()>0)
-//             {
-//               update answeredlist;
-//             }
-//             List<Survey_Question__c> results = [SELECT Id, Question__c , Grouping__c, Category__c FROM Survey_Question__c  WHERE Id  Not IN :qids];
-            
-//             List<Integer> qnumbers=new List<Integer>();
-            
-//             if(results.size()>0)
-//             {
-//             Integer randomNumber = Integer.valueof((Math.random() * results.size()-1));
-// 			qnumbers.add(randomNumber);
-//             Integer counter=0;
-//             Integer loopnumber=0;
-//             while(counter<3)
-//             {
-//                randomNumber = Integer.valueof((Math.random() * results.size()-1));
-//                if( !qnumbers.contains(randomNumber))
-//                {
-//                    qnumbers.add(randomNumber);
-//                    counter++;
-//                }
-//               	loopnumber++;
-//                 if(counter == (results.size()-1))
-//                 {
-//                     counter=5;  
-//                 }
-//             }
-//             }
-//             List<phsUserSurveyQuestions__c> newqlist=new List<phsUserSurveyQuestions__c>();
-   
-//             for(Integer i : qnumbers)
-//             {
-//          		Survey_Question__c sq=   results.get(i);
-//                 phsUserSurveyQuestions__c qobj=new phsUserSurveyQuestions__c();
-//                 qobj.Category__c=sq.Category__c;
-//                 qobj.Question__c=sq.Question__c;
-//                 qobj.Grouping__c=sq.Grouping__c;
-//                 qobj.SurveyQuestionId__c=sq.Id;
-//                 qobj.User__c=userId;
-//                 qobj.Name=sq.Name;
-//                 qobj.IsActive__c=true;
-//                 newqlist.add(qobj);       
-//             }
-//             insert newqlist;
-//         }
-//  }
-//     global void finish(Database.BatchableContext BC) {
-//     }
-// }
