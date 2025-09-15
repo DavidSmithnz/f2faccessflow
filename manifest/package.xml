@@ -3,53 +3,51 @@
 
     <!-- Apex Classes -->
     <types>
-    <!-- Main Controllers -->
-    <members>phsBatchWellnessUserQuestionSync</members>
-    <members>phsChatBaseController</members>
-    <members>phsCoachController</members>
-    <members>phsCourseController</members>
-    <members>phsCourseProgressController</members>
-    <members>phsGoalController</members>
-    <members>phsHeaderController</members>
-    <members>phsHomePageController</members>
-    <members>phsMyTeamsController</members>
-    <members>phsOnboardingController</members>
-    <members>phsProfileController</members>
-    <members>phsSharedGoalController</members>
-    <members>phsStrategyController</members>
-    <members>phsSurveyUserQuestionsController</members>
-    <members>phsUserGoalStrategyController</members>
-    <members>phsUserGoalsController</members>
-    <members>phsUserPerformanceController</members>
-    <members>phsUtilityController</members>
-    <members>phsWellnessWaveController</members>
-    <members>phsBatchWellnessUserQSyncScheduler</members>
+        <!-- Main Controllers -->
+        <members>phsBatchWellnessUserQuestionSync</members>
+        <members>phsChatBaseController</members>
+        <members>phsCoachController</members>
+        <members>phsCourseController</members>
+        <members>phsCourseProgressController</members>
+        <members>phsGoalController</members>
+        <members>phsHeaderController</members>
+        <members>phsHomePageController</members>
+        <members>phsMyTeamsController</members>
+        <members>phsOnboardingController</members>
+        <members>phsProfileController</members>
+        <members>phsSharedGoalController</members>
+        <members>phsStrategyController</members>
+        <members>phsSurveyUserQuestionsController</members>
+        <members>phsUserGoalStrategyController</members>
+        <members>phsUserGoalsController</members>
+        <members>phsUserPerformanceController</members>
+        <members>phsUtilityController</members>
+        <members>phsWellnessWaveController</members>
+        <members>phsBatchWellnessUserQSyncScheduler</members>
 
-    <!-- Test Classes -->
-    <members>phsGoalControllerTest</members>
-    <members>phsMyTeamsControllerTest</members>
-    <members>phsSharedGoalControllerTest</members>
-    <members>phsStrategyControllerTest</members>
-    <members>phsSurveyUserQuestionsControllerTest</members>
-    <members>phsUserGoalStrategyControllerTest</members>
-    <members>phsUserGoalsControllerTest</members>
-    <members>phsProfileControllerTest</members>
-    <members>phsWellnessWaveControllerTest</members>
-    <members>phsOnboardingControllerTest</members>
-    <members>phsBatchWellnessUserQuestionSyncTest</members>
-    <members>phsUserPerformanceControllerTest</members>
-    <members>phsChatBaseControllerTest</members>
-    <members>phsCoachControllerTest</members>
-    <members>phsCourseControllerTest</members>
-    <members>phsCourseProgressControllerTest</members>
-    <members>phsHeaderControllerTest</members>
-    <members>phsHomePageControllerTest</members>
-    <members>phsUtilityControllerTest</members>
-    <members>phsBatchWellnessUserQSyncSchedulerTest</members>
-
-    <name>ApexClass</name>
-</types>
-
+        <!-- Test Classes -->
+        <members>phsGoalControllerTest</members>
+        <members>phsMyTeamsControllerTest</members>
+        <members>phsSharedGoalControllerTest</members>
+        <members>phsStrategyControllerTest</members>
+        <members>phsSurveyUserQuestionsControllerTest</members>
+        <members>phsUserGoalStrategyControllerTest</members>
+        <members>phsUserGoalsControllerTest</members>
+        <members>phsProfileControllerTest</members>
+        <members>phsWellnessWaveControllerTest</members>
+        <members>phsOnboardingControllerTest</members>
+        <members>phsBatchWellnessUserQuestionSyncTest</members>
+        <members>phsUserPerformanceControllerTest</members>
+        <members>phsChatBaseControllerTest</members>
+        <members>phsCoachControllerTest</members>
+        <members>phsCourseControllerTest</members>
+        <members>phsCourseProgressControllerTest</members>
+        <members>phsHeaderControllerTest</members>
+        <members>phsHomePageControllerTest</members>
+        <members>phsUtilityControllerTest</members>
+        <members>phsBatchWellnessUserQSyncSchedulerTest</members>
+        <name>ApexClass</name>
+    </types>
 
     <!-- Lightning Web Components -->
     <types>
@@ -122,10 +120,84 @@
         <name>CustomMetadata</name>
     </types>
 
+   <!-- Layouts -->
+<types>
+    <members>phsGoals__c-phsGoals Layout</members>
+    <members>phsCourses__c-phsCourses Layout</members>
+    <members>phsCourseModule__c-phsCourseModule Layout</members>
+    <members>phsCourseProgress__c-phsCourseProgress Layout</members>
+    <members>phsTips__c-phsTips Layout</members>
+    <members>phsUserGoals__c-phsUserGoals Layout</members>
+    <members>phsUserGoalsStrategies__c-phsUserGoalsStrategies Layout</members>
+    <members>phsUserOnboardingQuestion__c-phsUserOnboardingQuestion Layout</members>
+    <members>phsUserOnboardingAnswerOptions__c-phsUserOnboardingAnswerOptions Layout</members>
+    <members>phsOnboardingUserAnswer__c-phsOnboardingUserAnswer Layout</members>
+    <members>phsCheckInConversation__c-phsCheckInConversation Layout</members>
+    <members>phsCheckOutConversation__c-phsCheckOutConversation Layout</members>
+    <members>phsCoachCheckIn__c-phsCoachCheckIn Layout</members>
+    <members>phsCoachCheckOut__c-phsCoachCheckOut Layout</members>
+    <members>phsCoachcheckOutQuestions__c-phsCoachcheckOutQuestions Layout</members>
+    <members>phsCoreElements__c-phsCoreElements Layout</members>
+    <members>phsCoreElementSubCategory__c-phsCoreElementSubCategory Layout</members>
+    <members>phsCoreElementSubCategoryDetails__c-phsCoreElementSubCategoryDetails Layout</members>
+    <members>phsSharedGoals__c-phsSharedGoals Layout</members>
+    <members>phsSharedGoalsStrategies__c-phsSharedGoalsStrategies Layout</members>
+    <members>phsStrategies__c-phsStrategies Layout</members>
+    <members>phsUGPerformance__c-phsUGPerformance Layout</members>
+    <members>phsHomeSlideShow__c-phsHomeSlideShow Layout</members>
+    <name>Layout</name>
+</types>
+
+<!-- Compact Layouts -->
+<types>
+    <members>phsGoals__c.CompactLayout</members>
+    <members>phsCourses__c.CompactLayout</members>
+    <members>phsCourseModule__c.CompactLayout</members>
+    <members>phsCourseProgress__c.CompactLayout</members>
+    <members>phsTips__c.CompactLayout</members>
+    <members>phsUserGoals__c.CompactLayout</members>
+    <members>phsUserGoalsStrategies__c.CompactLayout</members>
+    <members>phsUserOnboardingQuestion__c.CompactLayout</members>
+    <members>phsUserOnboardingAnswerOptions__c.CompactLayout</members>
+    <members>phsOnboardingUserAnswer__c.CompactLayout</members>
+    <members>phsCheckInConversation__c.CompactLayout</members>
+    <members>phsCheckOutConversation__c.CompactLayout</members>
+    <members>phsCoachCheckIn__c.CompactLayout</members>
+    <members>phsCoachCheckOut__c.CompactLayout</members>
+    <members>phsCoachcheckOutQuestions__c.CompactLayout</members>
+    <members>phsCoreElements__c.CompactLayout</members>
+    <members>phsCoreElementSubCategory__c.CompactLayout</members>
+    <members>phsCoreElementSubCategoryDetails__c.CompactLayout</members>
+    <members>phsSharedGoals__c.CompactLayout</members>
+    <members>phsSharedGoalsStrategies__c.CompactLayout</members>
+    <members>phsStrategies__c.CompactLayout</members>
+    <members>phsUGPerformance__c.CompactLayout</members>
+    <members>phsHomeSlideShow__c.CompactLayout</members>
+    <name>CompactLayout</name>
+</types>
+
     <!-- Experience Cloud Site -->
     <types>
         <members>*</members>
         <name>ExperienceBundle</name>
+    </types>
+
+    <!-- Named Credentials -->
+    <types>
+        <members>Chatbase</members>
+        <name>NamedCredential</name>
+    </types>
+
+    <!-- External Credentials -->
+    <types>
+        <members>ChatbaseAuth</members>
+        <name>ExternalCredential</name>
+    </types>
+
+    <!-- Profile -->
+    <types>
+        <members>f2f-app user</members>
+        <name>Profile</name>
     </types>
 
     <version>60.0</version>
