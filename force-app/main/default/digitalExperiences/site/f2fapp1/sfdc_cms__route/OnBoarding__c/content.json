@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "onboarding",
+  "contentBody" : {
+    "activeViewId" : "OnBoarding",
+    "configurationTags" : [ ],
+    "pageAccess" : "RequiresLogin",
+    "routeType" : "custom-onboarding",
+    "urlPrefix" : "onboarding"
+  },
+  "urlName" : "onboarding"
+}

@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "managegoals",
+  "contentBody" : {
+    "activeViewId" : "managegoals",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-managegoals",
+    "urlPrefix" : "managegoals"
+  },
+  "urlName" : "managegoals"
+}

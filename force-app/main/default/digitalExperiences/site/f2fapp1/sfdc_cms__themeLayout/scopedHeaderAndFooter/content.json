@@ -1,0 +1,106 @@
+{
+  "type" : "sfdc_cms__themeLayout",
+  "title" : "Authenticated layout",
+  "contentBody" : {
+    "component" : {
+      "attributes" : {
+        "hideThemeFooter" : false,
+        "showThemeFooterAtBottom" : true,
+        "stickyThemeHeader" : false
+      },
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : {
+              "margin" : {
+                "bottom" : "",
+                "left" : "",
+                "right" : "",
+                "top" : ""
+              },
+              "padding" : {
+                "bottom" : "0px",
+                "left" : "",
+                "right" : "",
+                "top" : "15px"
+              }
+            },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"cc0662b1-8bc3-4c5c-83cc-d2566fec9d3c\",\"columns\":[{\"UUID\":\"d1ee9887-fd13-4f32-ba5a-bf0abacfb3de\",\"columnName\":\"Column 1\",\"columnKey\":\"headerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:phsCustomHeader",
+              "id" : "8671aaa7-3959-4a77-8257-56360ed8bfbf",
+              "type" : "component"
+            } ],
+            "id" : "d1ee9887-fd13-4f32-ba5a-bf0abacfb3de",
+            "name" : "headerSection",
+            "title" : "Theme Header",
+            "type" : "region"
+          } ],
+          "customCssClasses" : "phsWhite",
+          "definition" : "community_layout:section",
+          "id" : "cc0662b1-8bc3-4c5c-83cc-d2566fec9d3c",
+          "scopedBrandingSetId" : "phsWhiteColor",
+          "type" : "component"
+        } ],
+        "id" : "f598f0fc-c7e1-4dd2-8a40-4ea2ab8bd0b3",
+        "name" : "header",
+        "title" : "Theme Header",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "dxpStyle" : { },
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"93fe51ad-5fab-4aaa-abfd-60323b0b7cda\",\"columns\":[{\"UUID\":\"4c566157-16dd-46cc-bd4f-6f0603a91027\",\"columnName\":\"Column 1\",\"columnKey\":\"footerSection\",\"columnWidth\":\"12\",\"seedComponents\":null}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:phsCustomFooter",
+              "id" : "9ff6824c-353d-4bc5-a819-b4496fa83db8",
+              "type" : "component"
+            } ],
+            "id" : "4c566157-16dd-46cc-bd4f-6f0603a91027",
+            "name" : "footerSection",
+            "title" : "Theme Footer",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "93fe51ad-5fab-4aaa-abfd-60323b0b7cda",
+          "scopedBrandingSetId" : "phsWhiteColor",
+          "type" : "component"
+        } ],
+        "id" : "1f8e598a-c8b7-4f31-85b1-5ee91c185523",
+        "name" : "footer",
+        "title" : "Theme Footer",
+        "type" : "region"
+      } ],
+      "definition" : "community_byo:scopedHeaderAndFooter",
+      "id" : "879261ca-d402-41b6-b965-caea2df19ac7",
+      "type" : "component"
+    }
+  },
+  "urlName" : "scoped-header-and-footer"
+}
