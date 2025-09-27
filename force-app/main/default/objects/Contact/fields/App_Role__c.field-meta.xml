@@ -1,0 +1,41 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
+    <fullName>App_Role__c</fullName>
+    <description>This field identifies role hierarchy for F2F app</description>
+    <inlineHelpText>Role hierarchy for Team</inlineHelpText>
+    <label>App Role</label>
+    <required>false</required>
+    <trackFeedHistory>false</trackFeedHistory>
+    <type>Picklist</type>
+    <valueSet>
+        <restricted>true</restricted>
+        <valueSetDefinition>
+            <sorted>false</sorted>
+            <value>
+                <fullName>Individual User</fullName>
+                <default>false</default>
+                <label>Individual User</label>
+            </value>
+            <value>
+                <fullName>System Admin</fullName>
+                <default>false</default>
+                <label>System Admin</label>
+            </value>
+            <value>
+                <fullName>Organizational Admin</fullName>
+                <default>false</default>
+                <label>Organizational Admin</label>
+            </value>
+            <value>
+                <fullName>Team Manager</fullName>
+                <default>false</default>
+                <label>Team Manager</label>
+            </value>
+            <value>
+                <fullName>Project Manager</fullName>
+                <default>false</default>
+                <label>Project Manager</label>
+            </value>
+        </valueSetDefinition>
+    </valueSet>
+</CustomField>
