@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "coach",
+  "contentBody" : {
+    "activeViewId" : "coach",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-coach",
+    "urlPrefix" : "coach"
+  },
+  "urlName" : "coach"
+}

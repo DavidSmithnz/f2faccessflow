@@ -1,0 +1,67 @@
+{
+  "type" : "sfdc_cms__view",
+  "title" : "coach",
+  "contentBody" : {
+    "component" : {
+      "children" : [ {
+        "children" : [ {
+          "attributes" : {
+            "backgroundImageConfig" : "",
+            "backgroundImageOverlay" : "rgba(0,0,0,0)",
+            "componentSpacerSize" : "",
+            "layoutDirectionDesktop" : "row",
+            "layoutDirectionMobile" : "column",
+            "layoutDirectionTablet" : "column",
+            "maxContentWidth" : "",
+            "sectionColumnGutterWidth" : "",
+            "sectionConfig" : "{\"UUID\":\"660e6234-cd4c-4abe-b5ac-f4675a74baec\",\"columns\":[{\"UUID\":\"fc4e7a96-e138-4763-a23e-e6f97d9379d4\",\"columnName\":\"Column 1\",\"columnKey\":\"col1\",\"columnWidth\":\"12\",\"seedComponents\":[]}]}",
+            "sectionMinHeight" : "",
+            "sectionVerticalAlign" : "flex-start"
+          },
+          "children" : [ {
+            "children" : [ {
+              "attributes" : { },
+              "definition" : "c:phsCoachHome",
+              "id" : "c464de72-ac83-4bdf-948d-2a2f60d5adaa",
+              "type" : "component"
+            } ],
+            "id" : "fc4e7a96-e138-4763-a23e-e6f97d9379d4",
+            "name" : "col1",
+            "title" : "Column 1",
+            "type" : "region"
+          } ],
+          "definition" : "community_layout:section",
+          "id" : "660e6234-cd4c-4abe-b5ac-f4675a74baec",
+          "type" : "component"
+        } ],
+        "id" : "c3af03a7-152b-4121-83d3-d227943bd0a2",
+        "name" : "content",
+        "title" : "Content",
+        "type" : "region"
+      }, {
+        "children" : [ {
+          "attributes" : {
+            "customHeadTags" : "",
+            "description" : "",
+            "pageTitle" : "coach",
+            "recordId" : "{!recordId}"
+          },
+          "definition" : "community_builder:seoAssistant",
+          "id" : "d24f8c77-ccf4-45ee-b6b7-fe211861ed53",
+          "type" : "component"
+        } ],
+        "id" : "44c45179-2409-4ba8-9cfc-5e04245481e4",
+        "name" : "sfdcHiddenRegion",
+        "title" : "sfdcHiddenRegion",
+        "type" : "region"
+      } ],
+      "definition" : "community_layout:sldsFlexibleLayout",
+      "id" : "e75902fd-24e3-4d18-abf5-aaa9ce48b9c9",
+      "type" : "component"
+    },
+    "dataProviders" : [ ],
+    "themeLayoutType" : "Inner",
+    "viewType" : "custom-coach"
+  },
+  "urlName" : "coach"
+}

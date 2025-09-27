@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "goals",
+  "contentBody" : {
+    "activeViewId" : "goals",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-goals",
+    "urlPrefix" : "goals"
+  },
+  "urlName" : "goals"
+}

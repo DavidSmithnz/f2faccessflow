@@ -1,0 +1,40 @@
+{
+  "type" : "sfdc_cms__trustedSites",
+  "title" : "trustedSites",
+  "contentBody" : {
+    "trustedSites" : [ {
+      "isActive" : true,
+      "source" : "https://fivetoflow--partmar24.sandbox.my.salesforce.com/sfc/servlet.shepherd/document/download/069VD000003XvU3YAK",
+      "sourceName" : "FiveToFlowSandbox"
+    }, {
+      "isActive" : true,
+      "source" : "https://fivetoflow--partmar24.sandbox.lightning.force.com/",
+      "sourceName" : "FiveToFlowSandbox1"
+    }, {
+      "isActive" : true,
+      "source" : "https://drive.google.com/",
+      "sourceName" : "GoogleDrive"
+    }, {
+      "isActive" : true,
+      "source" : "https://www.chatbase.co",
+      "sourceName" : "Chatbase"
+    }, {
+      "isActive" : true,
+      "source" : "https://school.moodledemo.net",
+      "sourceName" : "moodle"
+    }, {
+      "isActive" : true,
+      "source" : "https://cdn.pendo.io",
+      "sourceName" : "Pendo"
+    }, {
+      "isActive" : true,
+      "source" : "https://*.pendo.io",
+      "sourceName" : "PendoAll"
+    }, {
+      "isActive" : true,
+      "source" : "https://data.pendo.io",
+      "sourceName" : "PendoData"
+    } ]
+  },
+  "urlName" : "trustedsites"
+}

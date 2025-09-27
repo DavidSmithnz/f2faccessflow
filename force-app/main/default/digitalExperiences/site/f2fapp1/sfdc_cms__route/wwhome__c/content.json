@@ -1,0 +1,12 @@
+{
+  "type" : "sfdc_cms__route",
+  "title" : "wwhome",
+  "contentBody" : {
+    "activeViewId" : "wwhome",
+    "configurationTags" : [ ],
+    "pageAccess" : "UseParent",
+    "routeType" : "custom-wwhome",
+    "urlPrefix" : "wwhome"
+  },
+  "urlName" : "wwhome"
+}
