@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>phsCoreElementSubCategory__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>phsCoreElementSubCategory</label>
     <referenceTo>phsCoreElementSubCategory__c</referenceTo>
     <relationshipLabel>phsCoreElementSubCategoryDetails</relationshipLabel>

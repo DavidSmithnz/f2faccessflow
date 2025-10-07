@@ -3,7 +3,6 @@
     <fullName>phsGoals__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Foreign key to Object StandardGoals</description>
-    <externalId>false</externalId>
     <label>phsGoals</label>
     <referenceTo>phsGoals__c</referenceTo>
     <relationshipLabel>phsStrategies</relationshipLabel>

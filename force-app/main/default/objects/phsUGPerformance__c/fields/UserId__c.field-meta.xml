@@ -3,7 +3,6 @@
     <fullName>UserId__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Foreign key to Contact Object</description>
-    <externalId>false</externalId>
     <label>UserId</label>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>phsUGPerformance</relationshipLabel>

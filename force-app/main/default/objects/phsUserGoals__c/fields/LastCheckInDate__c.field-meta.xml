@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>LastCheckInDate__c</fullName>
     <description>This hold date of last check-in by user</description>
-    <externalId>false</externalId>
     <label>LastCheckInDate</label>
     <required>false</required>
     <trackTrending>false</trackTrending>
