@@ -1,7 +1,6 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>phsCourses__c</fullName>
-    <externalId>false</externalId>
     <label>phsCourses</label>
     <referenceTo>phsCourses__c</referenceTo>
     <relationshipLabel>phsCourseModules</relationshipLabel>

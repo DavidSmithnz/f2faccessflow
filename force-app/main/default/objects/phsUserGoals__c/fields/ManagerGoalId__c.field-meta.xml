@@ -3,7 +3,6 @@
     <fullName>ManagerGoalId__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>To track manager goals from phsManagerGoals</description>
-    <externalId>false</externalId>
     <label>ManagerGoalId</label>
     <referenceTo>Contact</referenceTo>
     <relationshipLabel>phsUserGoals (ManagerGoalId)</relationshipLabel>

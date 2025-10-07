@@ -3,7 +3,6 @@
     <fullName>FocusAreaId__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
     <description>Foreign key to Object FocusArea</description>
-    <externalId>false</externalId>
     <label>FocusAreaId</label>
     <referenceTo>phsFocusArea__c</referenceTo>
     <relationshipLabel>phsGoals</relationshipLabel>

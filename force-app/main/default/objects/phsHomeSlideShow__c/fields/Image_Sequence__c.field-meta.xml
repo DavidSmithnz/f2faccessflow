@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>Image_Sequence__c</fullName>
     <description>This field holds sequence of images to be displayed in slideshow</description>
-    <externalId>false</externalId>
     <inlineHelpText>Select sequence of image to be displayed in slideshow</inlineHelpText>
     <label>Image Sequence</label>
     <required>true</required>

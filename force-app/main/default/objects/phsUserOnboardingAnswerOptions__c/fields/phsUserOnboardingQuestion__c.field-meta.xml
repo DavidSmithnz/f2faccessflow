@@ -2,7 +2,6 @@
 <CustomField xmlns="http://soap.sforce.com/2006/04/metadata">
     <fullName>phsUserOnboardingQuestion__c</fullName>
     <deleteConstraint>SetNull</deleteConstraint>
-    <externalId>false</externalId>
     <label>phsUserOnboardingQuestion</label>
     <referenceTo>phsUserOnboardingQuestion__c</referenceTo>
     <relationshipLabel>phsUserOnboardingAnswerOptions</relationshipLabel>
